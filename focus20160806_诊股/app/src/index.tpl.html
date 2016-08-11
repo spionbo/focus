@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>疯狂诊股活动第1期—爱投顾—金融界</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="Keywords" content="诊股,股票,问股,投顾" />
+	<meta name="Description" content="爱投顾发起“疯狂诊股团”活动，集合20位不同操作风格的老师在规定时间内为用户集中诊股。" />
+</head>
+<body>
+<script>
+	var  AppName= '' , userInfo = {uid:'',mobile:''}
+		,loginStatus = '' //0是登录 -1是未登录 -2 是失效
+		,shareInfo = {
+			 title : '疯狂诊股活动第1期—爱投顾—金融界'
+			,content : '疯狂诊股活动第1期—爱投顾—金融界'
+			,pic : 'http://i0.jrjimg.cn/zqt-red-1000/focus/focus20160806/app/share.png'
+			,url : window.location.href
+		};
+
+	//初始化数据
+	var initObject = {
+		draw : { //抽奖
+			askNum : 3241, //问股数
+			zhenguNum : 13423 //诊股数
+		},
+		startText : '距离活动开始还有',
+		endText : '距离活动结束还有',
+		startTime : new Date('2016/07/11 20:00'),
+		endTime : new Date('2016/10/11 20:00'),
+		ask : [ //提问内容
+			{
+				title : '你好中顶替国',
+				content : "$A股指数(000002)$建议观察不参与。理由：该股连续两个跌停之后，今天打开跌停，向上反弹，那么将会带动其他蓝筹股的异动，一些中低价和超跌股将会蠢蠢欲动。但参与短线风险较大",
+				zhang : true,
+				userImg : 'http://i5.jrjimg.cn/201606/16/hp/hp_14660450604091_m.jpg',
+				userName : '国琪论股',
+				time : '06-22 14:20'
+			},
+			{
+				title : '跌股将会蠢蠢',
+				content : "两个跌停之后，今天打开跌停，向上反弹，那么将会带动其他蓝筹股的异动，一些中低价和超跌股将会蠢蠢欲动。但参与短线风险较大",
+				zhang : false,
+				userImg : 'http://i5.jrjimg.cn/201606/16/hp/hp_14660450604091_m.jpg',
+				userName : 'das股',
+				time : '06-23 14:20'
+			}
+		],
+		member : [ //老师
+			[
+				{
+					name : '国琪论股1',
+					type : '金牌达人',
+					id : '14511812521101',
+					pic : 'http://itg1.jrjimg.cn/201512/27/itougu/itougu_14511812521101.jpg'
+				},
+				{
+					name : '国琪论股2',
+					type : '金牌达人',
+					id : '14540032904921',
+					pic : 'http://itg1.jrjimg.cn/201601/29/itougu/itougu_14540032904921.jpg'
+				},
+				{
+					name : '国琪论股3',
+					type : '金牌达人',
+					id : '14660450604091',
+					pic : 'http://i5.jrjimg.cn/201606/16/hp/hp_14660450604091_m.jpg'
+				},
+				{
+					name : '国琪论股4',
+					type : '金牌达人',
+					id : '14679831911761',
+					pic : 'http://itg1.jrjimg.cn/201607/08/itougu/itougu_14679831911761.jpg'
+				},
+				{
+					name : '国琪论股5',
+					type : '金牌达人',
+					id : '14705791707241',
+					pic : 'http://itg1.jrjimg.cn/201608/07/itougu/itougu_14705791707241.jpg'
+				}
+			],
+			[
+				{
+					name : '第二组1',
+					type : '金牌达人',
+					id : '141101010069076304',
+					pic : 'http://itg1.jrjimg.cn/201606/16/itougu/itougu_14660900822551.jpg'
+				},
+				{
+					name : '第二组1股',
+					type : '金牌达人',
+					id : '141101010069076304',
+					pic : 'http://itg1.jrjimg.cn/201512/17/itougu/itougu_14503364436251.jpg'
+				},
+				{
+					name : '第二组1',
+					type : '金牌达人',
+					id : '141101010069076304',
+					pic : 'http://itg1.jrjimg.cn/201604/23/itougu/itougu_14614009996661.jpg'
+				},
+				{
+					name : '国第二组1',
+					type : '金牌达人',
+					id : '141101010069076304',
+					pic : 'http://itg1.jrjimg.cn/201604/12/itougu/itougu_14604286380671.jpg'
+				},
+				{
+					name : '国第二组1',
+					type : '金牌达人',
+					id : '141101010069076304',
+					pic : 'http://i5.jrjimg.cn/201603/15/hp/hp_14580023521681_m.jpg'
+				}
+			],
+			[
+				{
+					name : '第三组1',
+					type : '金牌达人',
+					id : '141101010069076304',
+					pic : 'http://itg1.jrjimg.cn/201504/23/itougu/itougu_14297952909921.jpg'
+				},
+				{
+					name : '第三组1股',
+					type : '金牌达人',
+					id : '141101010069076304',
+					pic : 'http://itg1.jrjimg.cn/201508/24/itougu/itougu_14404184335731.jpg'
+				},
+				{
+					name : '第三组1',
+					type : '金牌达人',
+					id : '141101010069076304',
+					pic : 'http://itg1.jrjimg.cn/201601/18/itougu/itougu_14530866299141.jpg'
+				},
+				{
+					name : '国第三组1',
+					type : '金牌达人',
+					id : '141101010069076304',
+					pic : 'http://itg1.jrjimg.cn/201607/12/itougu/itougu_14683379097831.jpg'
+				},
+				{
+					name : '国第三组1',
+					type : '金牌达人',
+					id : '141101010069076304',
+					pic : 'http://itg1.jrjimg.cn/201603/14/itougu/itougu_14579209332651.jpg'
+				}
+			],
+			[
+				{
+					name : '第四组1',
+					type : '金牌达人',
+					id : '141101010069076304',
+					pic : 'http://itg1.jrjimg.cn/201607/22/itougu/itougu_14691576491651.jpg'
+				},
+				{
+					name : '第四组1股',
+					type : '金牌达人',
+					id : '141101010069076304',
+					pic : 'http://itg1.jrjimg.cn/201412/26/itougu/itougu_14195773945501.jpg'
+				},
+				{
+					name : '第四组1',
+					type : '金牌达人',
+					id : '141101010069076304',
+					pic : 'http://itg1.jrjimg.cn/201511/02/itougu/itougu_14464532581211.jpg'
+				},
+				{
+					name : '国第四组1',
+					type : '金牌达人',
+					id : '141101010069076304',
+					pic : 'http://itg1.jrjimg.cn/201607/14/itougu/itougu_14684616247221.jpg'
+				},
+				{
+					name : '国第四组1',
+					type : '金牌达人',
+					id : '141101010069076304',
+					pic : 'http://itg1.jrjimg.cn/201602/09/itougu/itougu_14549832514281.jpg'
+				}
+			]
+		],
+		drawMember : [ //获奖的前三个用户，后面5个为幸运获得者
+			{src:'http://i5.jrjimg.cn/201603/15/hp/hp_14580023521681_m.jpg',name:'鑫鑫向荣'},
+			{src:'http://i5.jrjimg.cn/201603/15/hp/hp_14580023521681_m.jpg',name:'鑫荣'},
+			{src:'http://i5.jrjimg.cn/201603/15/hp/hp_14580023521681_m.jpg',name:'鑫向荣'},
+			{src:'http://i5.jrjimg.cn/201603/15/hp/hp_14580023521681_m.jpg',name:'鑫鑫向荣'},
+			{src:'http://i5.jrjimg.cn/201603/15/hp/hp_14580023521681_m.jpg',name:'鑫荣'},
+			{src:'http://i5.jrjimg.cn/201603/15/hp/hp_14580023521681_m.jpg',name:'鑫向荣'},
+			{src:'http://i5.jrjimg.cn/201603/15/hp/hp_14580023521681_m.jpg',name:'鑫鑫向荣'},
+			{src:'http://i5.jrjimg.cn/201603/15/hp/hp_14580023521681_m.jpg',name:'鑫荣'}
+		],
+		activityNumber : { //活动结束后的 参与人数等
+			participate : 55, //参与人数
+			askNum : 332, //问股数
+			reply : 235 , //回复数
+			percent : 88 //回答率
+		}
+	}
+</script>
+<content month='7' day='6' time='19:00-21:00'></content>
+</body>
+</html>
+<script src='http://js.jrj.com.cn/common/foot/jrj_dcs_tag-min.js' type="text/javascript"></script>
