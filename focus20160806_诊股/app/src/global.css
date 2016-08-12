@@ -38,3 +38,10 @@ input[type="button"], input[type="submit"], input[type="reset"] { cursor: pointe
 .winning{ background: url('http://i0.jrjimg.cn/zqt-red-1000/focus/focus20160806/app/pop1.png'); background-size: contain; }
 .notWinning{ background: url('http://i0.jrjimg.cn/zqt-red-1000/focus/focus20160806/app/pop2.png'); background-size: contain; }
 .close{ position: absolute; right: 10px; top: 10px; width: 50px; height: 50px; }
+
+.pop-win .close{ position:absolute; right:-10px; top:-10px; width:30px; height:30px; background:#fdeb01; border-radius:100%; }
+.pop-win .close .v-line,.pop .close .h-line{ transform:rotate(45deg); -webkit-transform:rotate(45deg); position:absolute; left:20%; top:50%; width:60%; height:3px; margin-top:-1px; background:#000;}
+.pop-win .close .h-line{ transform:rotate(-45deg); -webkit-transform:rotate(-45deg);}
+.pop-win .pop-cnt{ transform:rotateX(180deg) scale(.1); -webkit-transform:rotateX(180deg) scale(.1); opacity:0; transition-duration:.5s; -webkit-transition-duration:.5s;  position:relative; z-index:999; max-width:80%; min-width:60%; padding:15px; border-radius:10px; background:#d43138;}
+
+.pop-win .content{ padding-bottom:10px;}

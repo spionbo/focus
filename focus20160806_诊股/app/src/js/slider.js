@@ -1,4 +1,5 @@
 import $ from 'webpack-zepto';
+import Vue from 'vue';
 export default ( self , obj ) => {
 	//console.dir(obj);
 	var index = 0,
@@ -6,6 +7,7 @@ export default ( self , obj ) => {
 		fistList = [],
 		secondList = [];
 	function animate( callback ){
+		//return callback();
 		var li = $(obj.li)
 		li.addClass('animated flip');
 		setTimeout(()=>{

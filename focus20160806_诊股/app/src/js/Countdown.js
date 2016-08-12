@@ -1,4 +1,4 @@
-function timeInit( timeElem, startTime , endTime , callback , callback1  ){
+function timeInit( timeElem, initObject , callback , callback1 , callback2  ){
 
 	function getRTime( time ,callback ){
         var EndTime= new Date(time); //截止时间 
@@ -34,16 +34,24 @@ function timeInit( timeElem, startTime , endTime , callback , callback1  ){
         }
     }
     function start(){
-   		getRTime(startTime,function(){
+   		getRTime(initObject.startTime,function(){
    			callback();
    			clearInterval(start);
+   			draw();
+   			setInterval(draw,1000);
+   		});
+    }
+    function draw(){
+    	getRTime(initObject.drawEndTime,function(){
+   			callback1();
+   			clearInterval(draw);
    			end();
    			setInterval(end,1000);
    		});
     }
     function end(){
-    	getRTime(endTime,function(){
-			callback1();
+    	getRTime(initObject.endTime,function(){
+			callback2();
 			clearInterval(end);
 		})
     }

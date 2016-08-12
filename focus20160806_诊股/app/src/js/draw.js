@@ -3,8 +3,9 @@ import T from './global.js';
 const D = {
 	 num : 2 //抽奖次数
 	,body : $('body')
-	,start : function( btn ){
+	,start : function( btn , status ){
 		D.btn = $(btn);
+		D.status = status;
 		D.addPop();
 		D.btn.bind('click', function(){
 			if(loginStatus == 0 ){
@@ -17,11 +18,16 @@ const D = {
 		});
 	}
 	,event : function(){
-		if( D.num > 0 ){
-			D.num--;
-			D.notWinning();
-		}else{ //不能再抽奖
-			D.btn.unbind('click').addClass('unbind');
+
+		if(D.status == 0 ){
+			D.pop('本次活动问股数已达到1000，恭喜您获得一次抽奖机会！请在活动结束后进行抽奖，祝君中奖！')
+		}else if( D.status == 1 ){
+			if( D.num > 0 ){
+				D.num--;
+				D.notWinning();
+			}else{ //不能再抽奖
+				D.btn.unbind('click').addClass('unbind');
+			}
 		}
 	}
 	,addPop : function(){
@@ -32,6 +38,7 @@ const D = {
 						+"<div class='content'></div>"
 					+"</div>"
 				+"</div>");
+
 			D.popHtml = {
 				 elem : ele
 				,bg : ele.find('.pop-cnt')
@@ -63,6 +70,7 @@ const D = {
 					setTimeout(function(){
 						ele.elem.remove();
 						if( fn && $.type(fn)=='function' && fn() );
+						if(ele.callback) ele.callback();
 					},510)
 				}
 			}
@@ -80,5 +88,20 @@ const D = {
 		});
 		T.setImgSize();
 	}
+	,pop : function( txt ){ //提示
+		var elem = D.popHtml;
+		elem.close.html("<div class='v-line'></div><div class='h-line'></div></div>");
+		elem.elem.addClass('pop-win')
+		elem.addElement(function(){
+			return txt
+		});
+		elem.callback = function(){
+			elem.elem.removeClass('pop-win');
+			elem.close.html('');
+		}
+	}
 }
-export default D;
+module.exports = {
+	start : D.start , 
+	pop : D.pop
+}

@@ -171,7 +171,7 @@
 </template>
 <script>
 	import $ from 'webpack-zepto';
-	import D from '../js/draw.js';
+	import {start} from '../js/draw.js';
 	import T from '../js/global.js';
 	export default {
 		name : 'draw',
@@ -197,8 +197,8 @@
 				self.askNum = self.askNum>=1000?1000:self.askNum;
 				self.zhenNum = self.zhenNum>=1000?1000:self.zhenNum;
 
-				if( self.askNum==1000 && self.zhenNum==1000 ){
-					D.start('.submit .btn');
+				if( self.askNum==1000 ){
+					start('.luck-draw .submit .btn',self.$parent.question);
 				}
 
 				var blueline = $('.blueline .num'),

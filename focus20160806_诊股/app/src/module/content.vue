@@ -12,7 +12,7 @@
 				</div>
 				<div class="content">
 					<ul>
-						<li v-for='item in firstList' v-bind:style="{backgroundImage:'url('+item.pic+')'}">
+						<li v-for='item in firstList' v-bind:style="{backgroundImage:'url('+item.pic+')'}"><!--  transition="item" -->
 							<div class="mask-bg"></div>
 							<div class="cnt">
 								<div class="name">{{item.name}}</div>
@@ -26,7 +26,7 @@
 			<div class="bg1">
 				<div class="content content1">
 					<ul>
-						<li v-for='item in secondList' v-bind:style="{backgroundImage:'url('+item.pic+')'}">
+						<li v-for='item in secondList' v-bind:style="{backgroundImage:'url('+item.pic+')'}"><!--  transition="item" -->
 							<div class="mask-bg"></div>
 							<div class="cnt">
 								<div class="name">{{item.name}}</div>
@@ -98,6 +98,8 @@
 </template>
 <script>
 	import $ from 'webpack-zepto';
+	import Vue from 'vue';
+	import VueAnimatedList from '../js/vue-animated-list';
 	import Loadding from './loading.vue';
 	import top from './top.vue';
 	import draw from './draw.vue';
@@ -107,6 +109,9 @@
 	import T from '../js/global.js';
 	import callApp from '../js/callApp.js';
 	import WeChatShare from '../js/wechat-share.js'; 
+	import {pop} from '../js/draw.js';
+
+	Vue.use(VueAnimatedList);
 
 	export default {
 		name : 'content',
@@ -126,7 +131,8 @@
 				showStatus : true ,
 				firstList : initObject.member[0].slice(0,3) , 
 				secondList : initObject.member[0].slice(3) , 
-				ask : initObject.ask
+				ask : initObject.ask , 
+				question : 0
 			}
 		},
 		ready(){
@@ -135,13 +141,18 @@
 			L(()=>{
 				Time(
 					this.timeElement, 
-					initObject.startTime,
-					initObject.endTime,
-					function(){
-						self.timeText = initObject.endText;
+					initObject,
+					function(){ //活动开始时间
+						self.timeText = initObject.drawEndText;
+						self.question = 0;
 					},
-					function(){
+					function(){ //抽奖时间
+						self.timeText = initObject.endText;
+						self.question = 1;
+					},
+					function(){//活动结束时间
 						self.showStatus = false;
+						self.question = 2;
 					}
 				);
 				slider(self , {
@@ -161,10 +172,14 @@
 		},
 		methods : {
 			questions : function( event , name , id ){
-				//console.dir( event.target )
+				var self = this;
 				T.btnEvent.call( event.target , function(){
 					if(loginStatus == 0 ){
-						callApp.ask( name , id);
+						if(self.question == 0 ){ // 未到抽奖时间 ，不能抽奖
+							pop('活动还未开始！请在活动开始后进行问股！')
+						}else{
+							callApp.ask( name , id);
+						}
 					}else if(loginStatus == -1 ){
 						callApp.login(-1)
 					}else if( loginStatus == -2 ){
@@ -192,6 +207,8 @@
 	}
 </script>
 <style scoped>
+
+
 .member-bg{ background: #06204f; overflow: hidden; }
 .member{ margin: 0 20px; padding-top: 10px; }
 .member .title{ height: 40px; padding-top: 5px; display: box; display: -webkit-box; box-orient: horiznotal;  -webkit-box-orient:horiznotal; box-align:center; -webkit-box-align:center; box-pack: center;-webkit-box-pack: center;}
@@ -250,6 +267,26 @@
 .aside h2 .name{ display: inline-block; height: 33px; line-height: 33px; padding: 0 15px; border-radius: 10px; font-size: .9375rem; font-weight: bold; background: #7171b4;  }
 .aside .content{ margin-top: 10px; padding: 10px; background: #7171b4; font-size: .75rem; }
 .aside .content a{ display: inline-block; padding: 1px 5px; background: #f5c519;  }
+
+
+
+.item {
+  
+}
+.item-transition {
+  transition: opacity .5s ease;
+}
+.item-enter,.item-leave{
+	opacity: 0;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+  -webkit-animation-name: flip;
+  animation-name: flip;
+  animation-duration: 1s;
+  -webkit-animation-duration: 1s;
+}
+.item-leave{ opacity: 0; }
+
 
 @-webkit-keyframes flip {
   from {

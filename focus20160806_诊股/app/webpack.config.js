@@ -8,7 +8,7 @@ module.exports = {
     entry: './src/main.js',        
     output: {
         path: path.join(__dirname, "/build"),
-        publicPath: "http://i0.jrjimg.cn/zqt-red-1000/focus/focus20160806/app/",     //用于配置文件发布路径，如CDN或本地服务器
+        //publicPath: "http://i0.jrjimg.cn/zqt-red-1000/focus/focus20160806/app/",     //用于配置文件发布路径，如CDN或本地服务器
         filename: "[name].js?[hash]",
         crossOriginLoading : 'anonymous'
     },
@@ -52,7 +52,7 @@ module.exports = {
         inject: true,
         filename: 'index.html'
       }),
-      new webpack.DefinePlugin({
+      /*new webpack.DefinePlugin({
         "process.env": {
           NODE_ENV: JSON.stringify("production")
         }
@@ -63,6 +63,6 @@ module.exports = {
           },
           sourceMap: false
       }),
-      new webpack.optimize.OccurenceOrderPlugin()
+      new webpack.optimize.OccurenceOrderPlugin()*/
     ]
 };
