@@ -4,13 +4,13 @@
 			<div class="asknum img-size" data-width='159' data-height='158' data-right='20'></div>
 			<section class="luck-draw">
 				<div class="cnt">
-					<h2>已产生问股数<em>780</em></h2>
+					<h2>已产生问股数<em>{{askNum}}</em></h2>
 					<div class="line redline">
 						<div class="num-left"></div>
 						<div class="num"></div>
 						<div class="num-right"></div>
 					</div>
-					<h2 class="blue">已产生诊股数<em>500</em></h2>
+					<h2 class="blue">已产生诊股数<em>{{zhenNum}}</em></h2>
 					<div class="line blue blueline">
 						<div class="num-left"></div>
 						<div class="num"></div>
@@ -18,7 +18,7 @@
 					</div>
 				</div>
 				<div class="submit">
-					<div class="btn"></div>
+					<div class="btn unbind"></div>
 				</div>
 			</section>
 		</div>
@@ -183,8 +183,8 @@
 				list :  initObject.drawMember.slice(0,3),
 				luck_list :  initObject.drawMember.slice(3),
 				userInfo : initObject.activityNumber,
-				askNum : 0 , //问股数
-				zhenNum : 0  //诊股数
+				askNum : initObject.draw.askNum , //问股数
+				zhenNum : initObject.draw.zhenguNum  //诊股数
 			}
 		},
 		ready(){
@@ -198,7 +198,7 @@
 				self.zhenNum = self.zhenNum>=1000?1000:self.zhenNum;
 
 				if( self.askNum==1000 ){
-					start('.luck-draw .submit .btn',self.$parent.question);
+					start('.luck-draw .submit .btn',self.$parent.question , true);
 				}
 
 				var blueline = $('.blueline .num'),
@@ -227,7 +227,7 @@
 .asknum{ position: absolute; top: 0; background: url('http://i0.jrjimg.cn/zqt-red-1000/focus/focus20160806/app/asknum.png'); background-size: contain; }
 
 .luck-draw .submit{ position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; width: 100%; text-align: center; }
-.luck-draw .btn{ width: 64px; height: 203px; margin: 0 auto; background: url('http://i0.jrjimg.cn/zqt-red-1000/focus/focus20160806/app/draw-btn.png') no-repeat; background-size: auto 64px; }
+.luck-draw .btn{ width: 102px; height: 64px; margin: 0 auto; background: url('http://i0.jrjimg.cn/zqt-red-1000/focus/focus20160806/app/draw-btn.png') no-repeat; background-size: auto 64px; }
 .luck-draw .btn.enter{ background-position: -106px 0; }
 .luck-draw .btn.unbind{ background-position: right 0; }
 .luck-draw h2{ font-size: .75rem; color: #fe7800; padding-left: 10px; }

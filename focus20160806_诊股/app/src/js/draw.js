@@ -1,13 +1,15 @@
 import $ from 'webpack-zepto';
 import T from './global.js';
 const D = {
-	 num : 2 //抽奖次数
+	 num : 1 //抽奖次数
 	,body : $('body')
 	,start : function( btn , status ){
 		D.btn = $(btn);
+		D.btn.removeClass('unbind');
 		D.status = status;
 		D.addPop();
 		D.btn.bind('click', function(){
+
 			if(loginStatus == 0 ){
 				D.event();
 			}else if(loginStatus == -1 ){
@@ -18,16 +20,28 @@ const D = {
 		});
 	}
 	,event : function(){
-
+		dcsMultiTrack('DCS.dcsuri', 'ITOUGU_focus20160806_ZHENGU', 'WT.ti', 'ITOUGU_focus20160806_DRAW');
 		if(D.status == 0 ){
 			D.pop('本次活动问股数已达到1000，恭喜您获得一次抽奖机会！请在活动结束后进行抽奖，祝君中奖！')
 		}else if( D.status == 1 ){
-			if( D.num > 0 ){
-				D.num--;
-				D.notWinning();
-			}else{ //不能再抽奖
-				D.btn.unbind('click').addClass('unbind');
-			}
+			$.ajax({
+				url : 'http://itougu.jrj.com.cn/marketing/zhuanti/crazy_questions_h5/106/draw.jspa' , 
+				type : 'json' ,
+				success : function( _data ){
+					var val = String(_data.retCode);
+
+					if( val == '1' ){
+						D.winning();
+					}else if( val == '0'){
+						D.notWinning();
+					}else if( val == '-2' ){
+						D.pop(_data.retMsg)
+					}else{ //不能再抽奖
+						D.pop(_data.retMsg);
+						D.btn.unbind('click').addClass('unbind');
+					}
+				}
+			})
 		}
 	}
 	,addPop : function(){

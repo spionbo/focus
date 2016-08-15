@@ -99,7 +99,7 @@
 <script>
 	import $ from 'webpack-zepto';
 	import Vue from 'vue';
-	import VueAnimatedList from '../js/vue-animated-list';
+	//import VueAnimatedList from '../js/vue-animated-list';
 	import Loadding from './loading.vue';
 	import top from './top.vue';
 	import draw from './draw.vue';
@@ -111,7 +111,7 @@
 	import WeChatShare from '../js/wechat-share.js'; 
 	import {pop} from '../js/draw.js';
 
-	Vue.use(VueAnimatedList);
+	//Vue.use(VueAnimatedList);
 
 	export default {
 		name : 'content',
@@ -143,11 +143,11 @@
 					this.timeElement, 
 					initObject,
 					function(){ //活动开始时间
-						self.timeText = initObject.drawEndText;
+						self.timeText = initObject.endText;
 						self.question = 0;
 					},
 					function(){ //抽奖时间
-						self.timeText = initObject.endText;
+						self.timeText = initObject.drawEndText;
 						self.question = 1;
 					},
 					function(){//活动结束时间
@@ -169,10 +169,13 @@
 					shareImg: shareInfo.pic
 		     	});
 			});
+
+			
 		},
 		methods : {
 			questions : function( event , name , id ){
 				var self = this;
+				dcsMultiTrack('DCS.dcsuri', 'ITOUGU_focus20160806_ZHENGU', 'WT.ti', 'ITOUGU_focus20160806_ZHENGU');
 				T.btnEvent.call( event.target , function(){
 					if(loginStatus == 0 ){
 						if(self.question == 0 ){ // 未到抽奖时间 ，不能抽奖
