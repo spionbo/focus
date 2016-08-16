@@ -3,7 +3,7 @@ import T from './global.js';
 const D = {
 	 num : 1 //抽奖次数
 	,body : $('body')
-	,start : function( btn , status ){
+	,start : function( btn , status , dcs ){
 		D.btn = $(btn);
 		D.btn.removeClass('unbind');
 		D.status = status;
@@ -17,10 +17,11 @@ const D = {
 			}else if( loginStatus == -2 ){
 				callApp.login(-2)
 			}
+
+			dcs('DCS.dcsuri', 'ITOUGU_focus20160806_ZHENGU', 'WT.ti', 'ITOUGU_focus20160806_DRAW');
 		});
 	}
 	,event : function(){
-		dcsMultiTrack('DCS.dcsuri', 'ITOUGU_focus20160806_ZHENGU', 'WT.ti', 'ITOUGU_focus20160806_DRAW');
 		if(D.status == 0 ){
 			D.pop('本次活动问股数已达到1000，恭喜您获得一次抽奖机会！请在活动结束后进行抽奖，祝君中奖！')
 		}else if( D.status == 1 ){

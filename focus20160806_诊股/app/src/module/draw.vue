@@ -184,7 +184,8 @@
 				luck_list :  initObject.drawMember.slice(3),
 				userInfo : initObject.activityNumber,
 				askNum : initObject.draw.askNum , //问股数
-				zhenNum : initObject.draw.zhenguNum  //诊股数
+				zhenNum : initObject.draw.zhenguNum,  //诊股数
+				dcs : dcsMultiTrack
 			}
 		},
 		ready(){
@@ -198,7 +199,7 @@
 				self.zhenNum = self.zhenNum>=1000?1000:self.zhenNum;
 
 				if( self.askNum==1000 ){
-					start('.luck-draw .submit .btn',self.$parent.question , true);
+					start('.luck-draw .submit .btn',self.$parent.question , self.dcs);
 				}
 
 				var blueline = $('.blueline .num'),

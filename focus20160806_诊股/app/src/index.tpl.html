@@ -22,6 +22,7 @@
 		};
 
 	//初始化数据
+	var dcsMultiTrack = function(){}
 	var initObject = {
 		draw : { //抽奖
 			askNum : 3241, //问股数
@@ -34,22 +35,6 @@
 		endTime : new Date('2016/09/11 20:00'), // >startTime时间 <endTime 可提问
 		drawEndTime : new Date('2016/10/11 20:00'), // <drawEndTime && >endTime 可抽奖
 		ask : [ //提问内容
-			{
-				title : '你好中顶替国',
-				content : "$A股指数(000002)$建议观察不参与。理由：该股连续两个跌停之后，今天打开跌停，向上反弹，那么将会带动其他蓝筹股的异动，一些中低价和超跌股将会蠢蠢欲动。但参与短线风险较大",
-				zhang : true,
-				userImg : 'http://i5.jrjimg.cn/201606/16/hp/hp_14660450604091_m.jpg',
-				userName : '国琪论股',
-				time : '06-22 14:20'
-			},
-			{
-				title : '跌股将会蠢蠢',
-				content : "两个跌停之后，今天打开跌停，向上反弹，那么将会带动其他蓝筹股的异动，一些中低价和超跌股将会蠢蠢欲动。但参与短线风险较大",
-				zhang : false,
-				userImg : 'http://i5.jrjimg.cn/201606/16/hp/hp_14660450604091_m.jpg',
-				userName : 'das股',
-				time : '06-23 14:20'
-			}
 		],
 		member : [ //老师
 			[
@@ -197,7 +182,39 @@
 			reply : 235 , //回复数
 			percent : 88 //回答率
 		}
-	}
+	};
+	/*var answersData=[
+	    {
+	        "answerContent": "可以观察一下。没看到主力出货。以后买股票最好买",
+	        "answerId": 2691,
+	        "answerTime": 1470827019000,
+	        "answerUserId": "141122010023949343",
+	        "answerUserName": "满以山",
+	        "askContent": "GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG",
+	        "askId": 4080,
+	        "helpfulNum": 0,
+	        "isAdopt": 0,
+	        "riseDrop": 0,
+	        "userInfo": {
+	            "city": "北京",
+	            "company": "安信证券",
+	            "growupVal": 0,
+	            "headImage": "http://i5.jrjimg.cn/201411/25/itougu/itougu_14168887537301.jpg",
+	            "intro": "多位专家和信用主管部门认为，当前我国信用体系建设社会需求急迫，但立法步伐缓慢。由于缺少法律法规依据和制约，导致一些政府部门的社会信用信息归集和应用工作常常徘徊在违法边缘，许多原本有力的失信惩戒手段形同",
+	            "isAdviser": 1,
+	            "level": 0,
+	            "passportName": "tgtest5",
+	            "position": "证券投资咨询（分析师）",
+	            "province": "北京",
+	            "relationStatus": 0,
+	            "signV": 1,
+	            "type": 2,
+	            "typeDesc": "投资顾问",
+	            "userId": "141122010023949343",
+	            "userName": "满以山"
+	        }
+	    }
+	];*/
 </script>
 <content month='7' day='6' time='19:00-21:00'></content>
 </body>

@@ -8,7 +8,7 @@ module.exports = {
     entry: './src/main.js',        
     output: {
         path: path.join(__dirname, "/build"),
-       publicPath: "http://i0.jrjimg.cn/zqt-red-1000/focus/focus20160806/app/",     //用于配置文件发布路径，如CDN或本地服务器
+        publicPath: "http://i0.jrjimg.cn/zqt-red-1000/focus/focus20160806/app/",     //用于配置文件发布路径，如CDN或本地服务器
         filename: "[name].js?[hash]",
         crossOriginLoading : 'anonymous'
     },
@@ -43,9 +43,9 @@ module.exports = {
     ,resolue : {
         extensions: ['', '.js', '.json', '.scss','.vue']
     }
-    ,externals : {
+    /*,externals : {
       'callApp' : 'window.callApp'
-    }
+    }*/
     ,plugins: [
       new HtmlWebpackPlugin({
         template: path.resolve('src', 'index.tpl.html'),  

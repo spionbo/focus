@@ -39,7 +39,7 @@
 			</div>
 		</div>
 		<draw :status='showStatus'></draw>
-		<div class="comment">
+		<div class="comment" v-show='ask'>
 			<div class="content-bg">
 				<div class="content-blue">
 					<div class="title">
@@ -50,19 +50,19 @@
 						<div class="item" v-for='item in ask'>
 							<i class="q">Q</i>
 							<i class="dian"></i>
-							<h3>{{item.title}}</h3>
-							<div class="text">
-								<span class="z" v-show='item.zhang'><i></i>看涨</span>
-								<span class="d" v-show='!item.zhang'><i></i>看跌</span>
-								{{item.content}}
+							<h3>{{item.askContent}}</h3>
+							<div class="text"><!--  riseDrop 0 未选  1看涨 <0 看跌 -->
+								<span class="z" v-show='item.riseDrop==1'><i></i>看涨</span>
+								<span class="d" v-show='item.riseDrop<0'><i></i>看跌</span>
+								{{item.answerContent}}
 							</div>
 							<div class="user">
 								<div class="line1"></div>
 								<div class="info">
-									<img v-bind:src="item.userImg">
+									<img v-bind:src="item.userInfo.headImage">
 									<div class="info-msg">
-										<h4>{{item.userName}}</h4>
-										<time>{{item.time}}</time>
+										<h4>{{item.userInfo.userName}}</h4>
+										<time>{{item.answerTime | getTime }}</time>
 									</div>
 								</div>
 							</div>
@@ -110,6 +110,7 @@
 	import callApp from '../js/callApp.js';
 	import WeChatShare from '../js/wechat-share.js'; 
 	import {pop} from '../js/draw.js';
+	import loadJs from 'load-js';
 
 	//Vue.use(VueAnimatedList);
 
@@ -132,7 +133,9 @@
 				firstList : initObject.member[0].slice(0,3) , 
 				secondList : initObject.member[0].slice(3) , 
 				ask : initObject.ask , 
-				question : 0
+				question : 0 , 
+				login : loginStatus , 
+				dcs : dcsMultiTrack
 			}
 		},
 		ready(){
@@ -169,34 +172,52 @@
 					shareImg: shareInfo.pic
 		     	});
 			});
-
-			
+			if(!self.ask.length){
+				loadJs('http://itougu.jrj.com.cn/ques/campaign_answers.js').then(function(){
+					self.ask = window.answersData;
+				})
+			}
+		},
+		filters : {
+			getTime : function( now ){
+				now = parseInt(now);
+				function add0(m){return m<10?'0'+m:m }
+				var time = new Date(now);
+				//var y = time.getFullYear();
+				var m = time.getMonth()+1;
+				var d = time.getDate();
+				var h = time.getHours();
+				var mm = time.getMinutes();
+				//var s = time.getSeconds();
+				return add0(m)+'/'+add0(d)+' '+add0(h)+':'+add0(mm)//+':'+add0(s);
+			}
 		},
 		methods : {
 			questions : function( event , name , id ){
 				var self = this;
-				dcsMultiTrack('DCS.dcsuri', 'ITOUGU_focus20160806_ZHENGU', 'WT.ti', 'ITOUGU_focus20160806_ZHENGU');
 				T.btnEvent.call( event.target , function(){
-					if(loginStatus == 0 ){
+					if(self.login == 0 ){
 						if(self.question == 0 ){ // 未到抽奖时间 ，不能抽奖
 							pop('活动还未开始！请在活动开始后进行问股！')
 						}else{
 							callApp.ask( name , id);
 						}
-					}else if(loginStatus == -1 ){
+					}else if(self.login == -1 ){
 						callApp.login(-1)
-					}else if( loginStatus == -2 ){
+					}else if( self.login == -2 ){
 						callApp.login(-2)
 					}
 				});
+				self.dcs('DCS.dcsuri', 'ITOUGU_focus20160806_ZHENGU', 'WT.ti', 'ITOUGU_focus20160806_ZHENGU');
 			},
 			askHome : function(event){
+				var self = this;
 				T.btnEvent.call( event.target , function(){
-					if(loginStatus == 0 ){
+					if(self.login == 0 ){
 						callApp.ask();
-					}else if(loginStatus == -1 ){
+					}else if(self.login == -1 ){
 						callApp.login(-1)
-					}else if( loginStatus == -2 ){
+					}else if( self.login == -2 ){
 						callApp.login(-2)
 					}
 				});
@@ -249,7 +270,7 @@
 .comment .item .text{ position: relative; z-index: 2; padding-top: 5px; padding-bottom: 5px; border-left: 1px solid #97cef1; padding-left: 15px; line-height: 20px; color: #fff; font-size: .75rem; font-weight: bold; }
 .comment i.q{ position:absolute; left:-9px; top:5px; width: 13px; height: 13px; border: 4px solid #112f65; line-height: 13px;  text-align:center; font-size: .75rem; background: #97cef1; color: #97cef1; border-radius: 100%; color: #06204f; }
 .comment i.dian{ position: absolute; left: -6px; top: 44px; z-index: 5; width: 5px; height: 5px; background: #97cef1; border: 4px solid #112f65; border-radius: 100%; }
-.comment h3{ height: 25px; line-height: 22px; padding-left: 15px; border-left: 1px solid #97cef1; font-size: .75rem; color: #97cef1; }
+.comment h3{  line-height: 22px; padding-left: 15px; border-left: 1px solid #97cef1; font-size: .75rem; color: #97cef1; word-break:break-all; word-wrap:break-word; }
 
 .comment .user{ padding-left: 15px;  display: box; display: -webkit-box; width: 100%; box-orient: horzinotal; -webkit-box-orient: horzinotal;  box-shadow: border-box; -webkit-box-sizing:border-box;}
 .comment .line1{ box-flex: 1; -webkit-box-flex: 1; height: 25px; border-bottom: 1px dashed #6e9dc3; }
@@ -272,23 +293,6 @@
 .aside .content a{ display: inline-block; padding: 1px 5px; background: #f5c519;  }
 
 
-
-.item {
-  
-}
-.item-transition {
-  transition: opacity .5s ease;
-}
-.item-enter,.item-leave{
-	opacity: 0;
-  -webkit-backface-visibility: visible;
-  backface-visibility: visible;
-  -webkit-animation-name: flip;
-  animation-name: flip;
-  animation-duration: 1s;
-  -webkit-animation-duration: 1s;
-}
-.item-leave{ opacity: 0; }
 
 
 @-webkit-keyframes flip {
