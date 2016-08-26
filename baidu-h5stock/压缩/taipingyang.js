@@ -1,0 +1,1 @@
+﻿$.taipingyang={url:'http://www.cntaiping.com/zhuanti/life/yxjs/'}

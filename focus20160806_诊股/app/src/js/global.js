@@ -156,6 +156,31 @@ const T = {
 		T.qq = is_qq();
 		
 	}
+	,getByteLen : function(val) { //返回val的字节长度 
+		var len = 0; 
+		val = val.split('');
+		for (var i = 0; i < val.length; i++) { 
+			if (val[i].match(/[^\x00-\xff]/ig) != null) //全角 
+				len += 2; 
+			else 
+				len += 1; 
+		} 
+		return len; 
+	}
+	,getByteVal : function(val, max) { //返回val在规定字节长度max内的值 
+		var returnValue='',byteValLen = 0; 
+		val = val.split('')
+		for (var i = 0; i < val.length; i++) { 
+			if (val[i].match(/[^\x00-\xff]/ig) != null) 
+				byteValLen += 2; 
+			else 
+				byteValLen += 1; 
+			if (byteValLen > max) 
+			break; 
+			returnValue += val[i]; 
+		} 
+		return returnValue; 
+	}
 	,urlCode : function(){//获取渠道码
 		T.update();
 		if (T.url.search(/\?/) > 0) {

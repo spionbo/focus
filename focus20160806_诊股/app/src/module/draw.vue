@@ -2,7 +2,7 @@
 	<div class="start-dome" v-show='status'>
 		<div class="draw img-size" data-height='461' data-paddingLeft='95' data-paddingTop='105'>
 			<div class="asknum img-size" data-width='159' data-height='158' data-right='20'></div>
-			<section class="luck-draw">
+			<section class="luck-draw img-size">
 				<div class="cnt">
 					<h2>已产生问股数<em>{{askNum}}</em></h2>
 					<div class="line redline">
@@ -90,7 +90,7 @@
 						</p>
 					</div>
 					<div class="text">
-						<i class="num_3"></i>
+						<i class="num_4"></i>
 						<p>
 							请尽量在活动结束半小时前完成所有问股，这样即便老师晚些回复，也不耽误您正常休息。
 						</p>
@@ -199,7 +199,7 @@
 				self.zhenNum = self.zhenNum>=1000?1000:self.zhenNum;
 
 				if( self.askNum==1000 ){
-					start('.luck-draw .submit .btn',self.$parent.question , self.dcs);
+					start('.luck-draw .submit .btn',self.$parent , self.dcs);
 				}
 
 				var blueline = $('.blueline .num'),
@@ -234,7 +234,7 @@
 .luck-draw h2{ font-size: .75rem; color: #fe7800; padding-left: 10px; }
 .luck-draw h2.blue{ color: #609ee5;  }
 .luck-draw h2 em{ font-size: .9375rem; }
-.luck-draw .line{ width: 280px; height: 31px; padding: 12px 0 0 9px; background: url('http://i0.jrjimg.cn/zqt-red-1000/focus/focus20160806/app/draw.png') no-repeat; background-size: 280px auto; 
+.luck-draw .line{ width: 260px; height: 28px; padding: 9px 0 0 9px; background: url('http://i0.jrjimg.cn/zqt-red-1000/focus/focus20160806/app/draw.png') no-repeat; background-size: 260px auto; 
 	box-sizing: border-box; -webkit-box-sizing: border-box;
 }
 .luck-draw .line.blue{ background-position: 0 -31px; }
@@ -279,10 +279,10 @@ i.num_4{ background-position: 0 -48px; }
 
 .draw-member{ padding: 10px; background: #f5c519; overflow:hidden;}
 .draw-member ul,.member-author ul{ display: box; display: -webkit-box; width: 100%; box-orient: horizontal; -webkit-box-orient: horizontal;  }
-.draw-member li{ width: 100px; margin: 0 10px;  box-flex: 1; -webkit-box-flex: 1;  }
-.draw-member li .img{ width: 100px; height: 100px; border-radius: 100%;border:2px solid #fde480; }
+.draw-member li{ width: 90px; margin: 0 10px;  box-flex: 1; -webkit-box-flex: 1; text-align: center; }
+.draw-member li .img{ width: 90px; height: 90px; margin: 0 auto; border-radius: 100%;border:2px solid #fde480; }
 .draw-member li img{ width: 100%; height: 100%;  margin: 0 auto; border-radius: 100%; }
-.draw-member li .name{ position: relative; z-index: 5; margin: 0 auto; margin-top:-10px;  height: 22px; line-height: 22px;  border: 2px solid #fde480; border-radius: 5px; background: #ed8b00; font-weight: bold; font-size: .75rem; text-align: center; }
+.draw-member li .name{ position: relative; z-index: 5; margin: 0 auto; margin-top:-10px; height: 22px; line-height: 22px;  border: 2px solid #fde480; border-radius: 5px; background: #ed8b00; font-weight: bold; font-size: .75rem; text-align: center; }
 
 .member-author .tit{  }
 .member-author .line1{ height: 3px; background: url('http://i0.jrjimg.cn/zqt-red-1000/focus/focus20160806/app/chi.png'); background-size: auto 8px;  }
@@ -308,7 +308,7 @@ i.num_4{ background-position: 0 -48px; }
 
 /* 360*640 480*800 4.0, 480*854 4.3, 540*960 4.0 4.3 4.5 */
 @media only screen and (min-device-width : 320px) and (max-device-width : 340px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio:1) and (-webkit-max-device-pixel-ratio:2) {
-	.luck-draw .line{ width: 230px; height: 26px; padding-top: 9px; padding-left: 11px; background-size: 230px auto; }
+	.luck-draw .line{ width: 230px; height: 26px; padding-top:9px; padding-left: 11px; background-size: 230px auto; }
 	.luck-draw .line.blue{ background-position: 0 -26px; }
 	.luck-draw .num-left,.luck-draw .num-right,.luck-draw .num{ width:12px; height: 10px; background-position:0 -52px; background-size: 230px auto;
 	}
@@ -317,7 +317,7 @@ i.num_4{ background-position: 0 -48px; }
 	.active-info h2{ font-size: .75rem; }
 
 	.draw-old{ padding-top: 0; }
-	.draw-member li .img{ width: 80px; height: 80px; }
+	.draw-member li .img{ width: 75px; height: 75px;}
 
 	.luck-draw .btn{ width: 88px; height: 55px; background-size: auto 55px; }
 	.luck-draw .btn.enter{ background-position: -91px 0; }

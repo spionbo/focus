@@ -1,0 +1,1 @@
+(function(){var bC='ZXN',url='http://info.webquote.stockstar.com/WebQuote_v2/Default.aspx',delay='200';J.cY[bC]={};J.cY[bC][bC]='0,0,4,3,-2';jv(bC,url,delay);})();

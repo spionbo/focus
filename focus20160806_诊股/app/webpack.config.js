@@ -3,12 +3,10 @@ var webpack = require('webpack')
     ,HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-
-    //devtool: "source-map",    //生成sourcemap,便于开发调试
     entry: './src/main.js',        
     output: {
         path: path.join(__dirname, "/build"),
-        publicPath: "http://i0.jrjimg.cn/zqt-red-1000/focus/focus20160806/app/",     //用于配置文件发布路径，如CDN或本地服务器
+        publicPath: process.env.NODE_ENV === 'production' ? "http://i0.jrjimg.cn/zqt-red-1000/focus/focus20160806/app/" : '',     //用于配置文件发布路径，如CDN或本地服务器
         filename: "[name].js?[hash]",
         crossOriginLoading : 'anonymous'
     },
@@ -52,17 +50,32 @@ module.exports = {
         inject: true,
         filename: 'index.html'
       }),
-      new webpack.DefinePlugin({
-        "process.env": {
-          NODE_ENV: JSON.stringify("production")
-        }
-      }),
-      new webpack.optimize.UglifyJsPlugin({
-          compress: {
-            warnings: false
-          },
-          sourceMap: false
-      }),
-      new webpack.optimize.OccurenceOrderPlugin()
+      new webpack.ProvidePlugin({
+        Promise: 'imports?this=>global!exports?global.Promise!es6-promise'
+      })
     ]
 };
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports.plugins = (module.exports.plugins || []).concat([
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"'
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      },
+      sourceMap: false
+    }),
+
+    new webpack.optimize.OccurenceOrderPlugin()
+
+    // new ExtractTextPlugin('[name].[contenthash:12].css')
+
+  ])
+
+}else{
+  module.exports.devtool = '#source-map'
+}

@@ -1,11 +1,11 @@
 import $ from 'webpack-zepto';
-import Vue from 'vue';
 export default ( self , obj ) => {
 	//console.dir(obj);
 	var index = 0,
 		len = obj.data.length,
 		fistList = [],
-		secondList = [];
+		secondList = [],
+		timer = 0 , _tim = 5000;
 	function animate( callback ){
 		//return callback();
 		var li = $(obj.li)
@@ -15,28 +15,40 @@ export default ( self , obj ) => {
 			callback();
 		},1050)
 	};
-	obj.left.click(function(event) {
+	function move( num ){
 		animate(function(){
-			index++;
+			index = num==1? (index+1) : (index-1);
 			if(index>=len){
 				index = 0;
+			}else if(index<0){
+				index = len-1
 			}
 			fistList = obj.data[index].slice(0, 3);
 			secondList = obj.data[index].slice(3);
 			self.firstList = fistList;
 			self.secondList = secondList;
 		});
+	}
+	function clear(){
+		$(this).mouseover(function(event) {
+			clearInterval(timer);
+			$(this).mouseout(function(){
+				timer = setInterval(()=>{
+					move(1)
+				},_tim)
+			})
+		});
+	}
+	clear.call(obj.left);
+	clear.call(obj.right);
+	obj.left.click(function(event) {
+		move( 0 )
 	});
 	obj.right.click(function(event) {
-		animate(function(){
-			index--;
-			if(index<=0){
-				index = len-1;
-			}
-			fistList = obj.data[index].slice(0, 3);
-			secondList = obj.data[index].slice(3);
-			self.firstList = fistList;
-			self.secondList = secondList;
-		});
+		move( 1 )
 	});
+
+	timer = setInterval(()=>{
+		move(1)
+	},_tim)
 }

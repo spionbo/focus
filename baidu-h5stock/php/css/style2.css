@@ -1,0 +1,23 @@
+td, div, font{color:#000000;cursor:default;letter-spacing:20px;}
+#searchresult{border:1px solid #999999;background-color:#FFFFFF;}
+.jc,.jc td,.jc th{border:1px solid #d40000;}
+.jc2,.jc2 td,.jc2 th{border:1px solid #d40000;}
+th,.jc th,.jc2 th{color:#000000}
+select,input,textarea{
+border:1px solid #999999;
+color:#000000;
+background-color:#ffffff;
+}
+a:link, a:visited, a:active, #rollnews td{color:#0000ff}
+.zxggroup1, .zxggroup2, .zxggroup3{border:1px solid #448BCB;}
+.zxggroup1{background-color:#ffffff;color:#000000}
+.zxggroup2{background-color:#448BCB;color:#eeeeee}
+.zxggroup3{background-color:#cccccc;color:#000000}
+.odd{background-color: #E5E5E5}
+.highlight{background-color: #bbbbbb}
+.texth{text-align:center; color: #000000}
+.volume{color: #4489CA}
+.ttl td, .ttl2 td{background-color: #aaaaaa;color:#000000}
+.barup{color:#D40000}
+.bardown{color:#008000}
+.chiping{color:#000000}

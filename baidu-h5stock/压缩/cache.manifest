@@ -1,0 +1,19 @@
+CACHE MANIFEST   
+
+# VERSION v1.0.1.20140905-1121
+
+CACHE:  
+http://m.stockstar.com/images/loading.gif
+http://m.stockstar.com/images/tel.png
+http://m.stockstar.com/images/tel1.png
+http://m.stockstar.com/images/news_ad.jpg
+http://m.stockstar.com/images/ad.jpg
+http://m.stockstar.com/style/base.css
+http://m.stockstar.com/all.js
+
+http://m.stockstar.com/s_v3.js
+
+NETWORK:  
+*
+
+FALLBACK:  

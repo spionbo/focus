@@ -55,6 +55,7 @@
 								<span class="z" v-show='item.riseDrop==1'><i></i>看涨</span>
 								<span class="d" v-show='item.riseDrop<0'><i></i>看跌</span>
 								{{item.answerContent}}
+								<div class="showmore" v-show='item.showmore' @click='showList(item)'>更多</div>
 							</div>
 							<div class="user">
 								<div class="line1"></div>
@@ -94,6 +95,26 @@
 		<img class='layout-img' data-src='http://i0.jrjimg.cn/zqt-red-1000/focus/focus20160806/app/text1.png'>
 		<img class='layout-img' data-src='http://i0.jrjimg.cn/zqt-red-1000/focus/focus20160806/app/top1.jpg'>
 		<img class='layout-img' data-src='http://i0.jrjimg.cn/zqt-red-1000/focus/focus20160806/app/top2.jpg'>
+		<img class='layout-img' data-src='http://itg1.jrjimg.cn/201608/25/editor_upload/editor_upload_14721052394271.jpg'>
+		<img class='layout-img' data-src='http://itg1.jrjimg.cn/201608/25/editor_upload/editor_upload_14721052612971.jpg'>
+		<img class='layout-img' data-src='http://itg1.jrjimg.cn/201608/25/editor_upload/editor_upload_14721052732171.jpg'>
+		<img class='layout-img' data-src='http://itg1.jrjimg.cn/201608/25/editor_upload/editor_upload_14721052880971.jpg'>
+		<img class='layout-img' data-src='http://itg1.jrjimg.cn/201608/25/editor_upload/editor_upload_14721053039671.jpg'>
+		<img class='layout-img' data-src='http://itg1.jrjimg.cn/201608/25/editor_upload/editor_upload_14721053916941.jpg'>
+		<img class='layout-img' data-src='http://itg1.jrjimg.cn/201608/25/editor_upload/editor_upload_14721054085161.jpg'>
+		<img class='layout-img' data-src='http://itg1.jrjimg.cn/201608/25/editor_upload/editor_upload_14721054265161.jpg'>
+		<img class='layout-img' data-src='http://itg1.jrjimg.cn/201608/25/editor_upload/editor_upload_14721054427261.jpg'>
+		<img class='layout-img' data-src='http://itg1.jrjimg.cn/201608/25/editor_upload/editor_upload_14721054579851.jpg'>
+		<img class='layout-img' data-src='http://itg1.jrjimg.cn/201608/25/editor_upload/editor_upload_14721054675461.jpg'>
+		<img class='layout-img' data-src='http://itg1.jrjimg.cn/201608/25/editor_upload/editor_upload_14721054830161.jpg'>
+		<img class='layout-img' data-src='http://itg1.jrjimg.cn/201608/25/editor_upload/editor_upload_14721054971261.jpg'>
+		<img class='layout-img' data-src='http://itg1.jrjimg.cn/201608/25/editor_upload/editor_upload_14721055793751.jpg'>
+		<img class='layout-img' data-src='http://itg1.jrjimg.cn/201608/25/editor_upload/editor_upload_14721055941751.jpg'>
+		<img class='layout-img' data-src='http://itg1.jrjimg.cn/201608/25/editor_upload/editor_upload_14721056061941.jpg'>
+		<img class='layout-img' data-src='http://itg1.jrjimg.cn/201608/25/editor_upload/editor_upload_14721056181251.jpg'>
+		<img class='layout-img' data-src='http://itg1.jrjimg.cn/201608/25/editor_upload/editor_upload_14721056314151.jpg'>
+		<img class='layout-img' data-src='http://itg1.jrjimg.cn/201608/25/editor_upload/editor_upload_14721056427751.jpg'>
+		<img class='layout-img' data-src='http://itg1.jrjimg.cn/201608/25/editor_upload/editor_upload_14721056540451.jpg'>
 	</div>
 </template>
 <script>
@@ -135,7 +156,7 @@
 				ask : initObject.ask , 
 				question : 0 , 
 				login : loginStatus , 
-				dcs : dcsMultiTrack
+				dcs : dcsMultiTrack 
 			}
 		},
 		ready(){
@@ -147,15 +168,15 @@
 					initObject,
 					function(){ //活动开始时间
 						self.timeText = initObject.endText;
-						self.question = 0;
+						self.question = 1;
 					},
 					function(){ //抽奖时间
 						self.timeText = initObject.drawEndText;
-						self.question = 1;
+						self.question = 2;
 					},
 					function(){//活动结束时间
 						self.showStatus = false;
-						self.question = 2;
+						self.question = 3;
 					}
 				);
 				slider(self , {
@@ -175,6 +196,29 @@
 			if(!self.ask.length){
 				loadJs('http://itougu.jrj.com.cn/ques/campaign_answers.js').then(function(){
 					self.ask = window.answersData;
+					var  width = window.screen.width
+						,len = 0 ;
+
+					if( width>=360 && width<=667 && width !=414 && width != 736){ // iphone6
+						len = 75
+					}else if( width>=414 && width<=736 ){ // iphone6 plus
+						len = 85
+					}else{//iphone4
+						len = 55;
+					}
+					$.each(self.ask,function( i , obj ){
+						var _len = len
+						if( obj.riseDrop!=0 ){
+							_len -= 12;
+						}
+						obj.answerContentStr = obj.answerContent;
+						if(T.getByteLen(obj.answerContent)>_len){
+							obj.answerContent = T.getByteVal(obj.answerContent,_len)+'...';
+							obj.showmore = true;
+						}else{
+							obj.showmore = false;
+						}
+					});
 				})
 			}
 		},
@@ -196,31 +240,26 @@
 			questions : function( event , name , id ){
 				var self = this;
 				T.btnEvent.call( event.target , function(){
-					if(self.login == 0 ){
+					callApp.login(self.login,function(){
 						if(self.question == 0 ){ // 未到抽奖时间 ，不能抽奖
 							pop('活动还未开始！请在活动开始后进行问股！')
 						}else{
 							callApp.ask( name , id);
 						}
-					}else if(self.login == -1 ){
-						callApp.login(-1)
-					}else if( self.login == -2 ){
-						callApp.login(-2)
-					}
+					});
 				});
 				self.dcs('DCS.dcsuri', 'ITOUGU_focus20160806_ZHENGU', 'WT.ti', 'ITOUGU_focus20160806_ZHENGU');
 			},
 			askHome : function(event){
 				var self = this;
 				T.btnEvent.call( event.target , function(){
-					if(self.login == 0 ){
-						callApp.ask();
-					}else if(self.login == -1 ){
-						callApp.login(-1)
-					}else if( self.login == -2 ){
-						callApp.login(-2)
-					}
+					callApp.login(self.login,callApp.ask);
 				});
+			},
+			showList : function( obj ){ //展示更多
+				obj.answerContent = obj.answerContentStr;
+				obj.showmore = false;
+				$(event.target).hide();
 			}
 		},
 		events : {
@@ -267,7 +306,8 @@
 .comment .content{ }
 .comment .title h2{height: 33px; line-height: 33px; background: #2a5299; color: #fff; font-size: .9375rem; text-align: center; }
 .comment .item{ position: relative; z-index: 1; padding-top: 10px;}
-.comment .item .text{ position: relative; z-index: 2; padding-top: 5px; padding-bottom: 5px; border-left: 1px solid #97cef1; padding-left: 15px; line-height: 20px; color: #fff; font-size: .75rem; font-weight: bold; }
+.comment .item .text{ position: relative; z-index: 2; padding-top: 5px; padding-bottom: 5px; border-left: 1px solid #97cef1; padding-left: 15px; line-height: 20px; color: #fff; font-size: .75rem; font-weight: bold; overflow: hidden; word-break:break-all; }
+.comment .item .text .showmore{ position: absolute; right: 15px; bottom: 5px; font-weight: normal; background: rgba(255,255,255,.2);    padding: 0 10px; border-radius: 9px;}
 .comment i.q{ position:absolute; left:-9px; top:5px; width: 13px; height: 13px; border: 4px solid #112f65; line-height: 13px;  text-align:center; font-size: .75rem; background: #97cef1; color: #97cef1; border-radius: 100%; color: #06204f; }
 .comment i.dian{ position: absolute; left: -6px; top: 44px; z-index: 5; width: 5px; height: 5px; background: #97cef1; border: 4px solid #112f65; border-radius: 100%; }
 .comment h3{  line-height: 22px; padding-left: 15px; border-left: 1px solid #97cef1; font-size: .75rem; color: #97cef1; word-break:break-all; word-wrap:break-word; }

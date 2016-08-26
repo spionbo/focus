@@ -1,0 +1,1 @@
+function ly(){var i=$T.ao(arguments);var x='';while(i--)x=arguments[i]+", "+x;document.title=x;};function kL(a){var z='',i=$T.ao(a);while(i--)z='['+i+']'+a[i]+', \n'+z;jn(z)};function dump(a){var z='';for(var i in a){z+=i+':'+a[i]+"\n"}alert(z)};function jn(){var z='',i=$T.ao(arguments);while(i--)z=arguments[i]+"; "+z;alert(z);}; 

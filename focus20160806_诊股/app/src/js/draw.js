@@ -1,35 +1,37 @@
 import $ from 'webpack-zepto';
 import T from './global.js';
+import callApp from './callApp.js';
 const D = {
 	 num : 1 //抽奖次数
 	,body : $('body')
-	,start : function( btn , status , dcs ){
+	,start : function( btn , parent , dcs ){
 		D.btn = $(btn);
 		D.btn.removeClass('unbind');
-		D.status = status;
 		D.addPop();
 		D.btn.bind('click', function(){
-
-			if(loginStatus == 0 ){
-				D.event();
-			}else if(loginStatus == -1 ){
-				callApp.login(-1)
-			}else if( loginStatus == -2 ){
-				callApp.login(-2)
-			}
+			T.btnEvent.call( D.btn , function(){
+				callApp.login(window.loginStatus,function(){
+					D.event( parent );
+				});
+			});
 
 			dcs('DCS.dcsuri', 'ITOUGU_focus20160806_ZHENGU', 'WT.ti', 'ITOUGU_focus20160806_DRAW');
 		});
 	}
-	,event : function(){
-		if(D.status == 0 ){
+	,event : function( parent ){
+		//console.dir(parent)
+		if(parent.question == 1 ){
 			D.pop('本次活动问股数已达到1000，恭喜您获得一次抽奖机会！请在活动结束后进行抽奖，祝君中奖！')
-		}else if( D.status == 1 ){
+		}else if( parent.question == 2 ){
 			$.ajax({
 				url : 'http://itougu.jrj.com.cn/marketing/zhuanti/crazy_questions_h5/106/draw.jspa' , 
-				type : 'json' ,
+				//type : 'json' ,
+				data : {
+					userId : userInfo.uid
+				},
 				success : function( _data ){
 					var val = String(_data.retCode);
+					//alert(val+':'+_data.retMsg)
 
 					if( val == '1' ){
 						D.winning();
@@ -41,6 +43,9 @@ const D = {
 						D.pop(_data.retMsg);
 						D.btn.unbind('click').addClass('unbind');
 					}
+				},
+				error : function(){
+					D.pop('活动错误！')
 				}
 			})
 		}

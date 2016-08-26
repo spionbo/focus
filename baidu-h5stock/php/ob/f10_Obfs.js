@@ -1,0 +1,1 @@
+(function(){var bC='F10',url='',delay='200';J.cY[bC]={F10:'0,0,4,3,-2',A1:'2,0,2,3,-2',A5:'2,2,2,1,-2'};jv(bC,url,delay);var z=window[bC];z.AZ=function(a){Ak(z.content,'http://webquotef10.stockstar.com/stars/info/'+(a||J.gwdm.substring(1))+'.shtml');}})();

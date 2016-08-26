@@ -1,0 +1,15 @@
+CACHE MANIFEST   
+
+# VERSION v1.0.1.20120522-1000
+
+CACHE:  
+http://m.stockstar.com/images/loading.gif
+http://m.stockstar.com/style/base.css
+http://m.stockstar.com/all.js
+
+http://m.stockstar.com/s_v3.js
+
+NETWORK:  
+*
+
+FALLBACK:  

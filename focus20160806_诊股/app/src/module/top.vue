@@ -27,7 +27,9 @@
 			</ul>
 		</div>
 	</div>
-	<div class="topbar-2 img-size" data-height='807' v-show='!status'></div>
+	<div class="topbar-2 img-size" data-height='807' v-show='!status'>
+		<div class="txtNum img-size" data-left='44'  data-top='345'>第一期</div>
+	</div>
 </template>
 <script>
 	
@@ -54,11 +56,13 @@
 
 .start-time{ position: absolute; }
 .start-time .p1{ font-size: .7rem; }
-.start-time .p1 em{ font-size: 1.25rem; font-weight: bold; }
-.start-time .p2{ font-size: .5rem; }
+.start-time .p1 em{ font-size: 1rem; font-weight: bold; }
+.start-time .p2{ font-size: .75rem; }
 .start-time .p2 em{ font-size: .625rem; }
 
 .time{ position: absolute; font-size: 1.33rem; }
 .time ul{ width: 100%; display: box; display: -webkit-box; box-orient: horiznotal;  -webkit-box-orient:horiznotal;  }
 .time li{ width:12.5% ; box-flex: 1; -webkit-box-flex: 1; text-align: center; color: #fff; }
+
+.topbar-2 .txtNum{ position: absolute; font-size: .875rem; transform: rotate(-6deg); -webkit-transform: rotate(-6deg);}
 </style>
