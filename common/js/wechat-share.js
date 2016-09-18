@@ -27,7 +27,6 @@ var InitWeChatShare = function (config) {
             cache: false,
             timeout: 10000,
             success: function (d) {
-                
                 if (typeof wx == 'undefined' || typeof d == 'undefined') {
                     return;
                 }

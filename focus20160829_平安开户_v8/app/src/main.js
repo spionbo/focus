@@ -28,6 +28,7 @@ import pop from './js/pop.js';
 			}
 			{//点击事件
 				$('.main .btn1').click(()=>{
+					
 					T.btnEvent.call(this,()=> {
 						require.ensure([],()=>{
 							const callApp = require('../../../common/js/callApp.js');

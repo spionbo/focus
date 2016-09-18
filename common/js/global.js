@@ -1,5 +1,4 @@
-import $ from 'webpack-zepto';
-const T = {
+var T = {
 	 body : $('body')
 	,url : window.location.href
 	,Itougu : false
@@ -28,6 +27,17 @@ const T = {
 		T.setImgSize();
 		T.clickEvent();
 	}
+	,popElement:function(){
+        T.openWindow.show();
+        if(T.popUrl==3){
+            T.openWindow.unbind().eq(0).css({margin:'20px'}).click(function(e){
+                e.stopPropagation();
+            });
+            T.openWindow.eq(1).click(function(){
+                T.openWindow.hide();
+            });
+        }
+    }
 	,update : function(){ //不断更新
 		T.url = window.location.href;
 		T.width = $(window).width();
@@ -42,7 +52,7 @@ const T = {
 
 		$('.img-size').each(function(){
 			var self = $(this);
-			$.each(['data-height','data-width','data-left','data-right','data-bottom','data-top','data-marginTop' , 'data-paddingTop' , 'data-paddingLeft' , 'data-paddingRight', 'data-marginLeft' , 'data-marginRight'],function( i , str ){
+			$.each(['data-height','data-width','data-left','data-right','data-bottom','data-top','data-marginTop' , 'data-paddingTop' , 'data-paddingLeft' , 'data-paddingRight', 'data-marginLeft' , 'data-marginRight' , 'data-marginBottom'],function( i , str ){
 				var num = self.attr(str); 
 				if( num ){
 					num = num*ratio/2+'px';
@@ -63,6 +73,7 @@ const T = {
 					if( str == 'data-paddingTop') self.css({paddingTop:num});
 					if( str == 'data-paddingLeft') self.css({paddingLeft:num});
 					if( str == 'data-paddingRight') self.css({paddingRight:num});
+					if( str == 'data-marginBottom') self.css({marginBottom:num});
 				}
 			});
 		});
@@ -234,9 +245,9 @@ const T = {
 				},20);
 			}
 
-		}else {
+		}else{
 			if( callback && $.type(callback)== 'function'  ){
-					callback.call( this );
+				callback.call( this );
 			}else{
 				if(url.appCode && url.obj ){
 					jrj.jsCallNative(url.appCode, url.obj);
@@ -250,7 +261,6 @@ const T = {
 		return false;
 	}
 	,loading : function(){ //下载
-		T.body.css({height:T.height+'px'});
 		var  oLoadingBox = $('.loading-box')
 			,oLoading = $('#track')
 			,oTxt = $('#txt')
@@ -266,6 +276,7 @@ const T = {
 		});
 		
 		if (len) {
+			T.body.css({height:T.height+'px'});
 			img.each(function( i ){
 				var  oImage = new Image()
 					,self = $(this)

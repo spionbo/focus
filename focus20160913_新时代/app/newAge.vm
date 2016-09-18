@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>新时代证券开户活动—爱投顾—金融界</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="Keywords" content="新时代证券、证券开户、王伦内参、现金红包">
+	<meta name="Description" content="活动期间，凡是通过爱投顾APP平台成功开通新时代证券的用户，立得30元现金红包和王伦投资内参一份。">
+<link href="http://i0.jrjimg.cn/zqt-red-1000/focus/focus20160913/app/./0main.css" rel="stylesheet"></head>
+<body>
+
+<div class="loading-box">
+	<div class="track" id="track">
+		<div id="txt" class="txt"><span></span></div>
+		<div class="bar"></div>
+	</div>
+</div>
+<article class="container" style="opacity:0">
+	<article class="main">
+		<div class="star-dian"></div>
+		<div class="mask-content">
+			<div class="logo"></div>
+			<div class="share"></div>
+			<div class="yuan"></div>
+			<div class="yuan-bg"></div>
+			<div class="top_num">
+				<div class="t5"></div>
+				<div class="t4"></div>
+				<div class="t8"></div>
+			</div>
+			<div class="bottom_num img-size" data-left="340" data-top="480">
+				<div class="t5"></div>
+				<div class="t4"></div>
+				<div class="t8"></div>
+			</div>
+			<div class="activity">
+				<div class="sm">
+					<div class="img img-size" data-width="172" data-height="231" data-marginleft="100"></div>
+					<ul class="img-size" data-paddingtop="20">
+						<li class="ft11">活动时间: 9月19日-10月16日</li>
+						<li>30元现金红包 + </li>
+						<li>超值王伦强者恒强内参(10月)</li>
+					</ul>
+				</div>
+				<div class="btn img-size" data-width="526" data-height="103"></div>
+			</div>
+		</div>
+	</article>
+	<article class="book-top img-size" data-width="710">
+		<div class="top img-size" data-height="117"></div>
+		<div class="content img-size" data-paddingleft="50" data-paddingright="50">
+			<h2>新时代证券开户专属内参--</h2>
+			<h1>强者恒强16期-金九银十行情！</h1>
+			<p class="briefly">
+			王伦开户专属内参服务期：<time>9月25日--10月31日</time>，开户成功后三个工作日发放到用户的爱投顾帐号内，用户可在“我的-内参”里查看。
+			</p>
+			<div class="submit">
+				<div class="btn">查看内参</div>
+			</div>
+			<section class="about">
+				<h1>王伦简介：</h1>
+				<p>
+					<i class="img img-size" data-width="215" data-height="306"></i>
+					2015年爱投顾最佳投资顾问票选冠军，金融界、欧洲时报、中国新闻网财经频道特约评论员，前重庆东金投资顾问有限公司高级投资顾问。
+					具备超过8年金融市场从业经验，精通量化分析、波浪理论、投资心理等诸多领域，追求稳健收益目标，在不成熟的A股市场中，做一个成熟的交易者。
+				</p>
+			</section>
+			<aside>
+				<h1>用户眼中的投顾冠军王伦</h1>
+				<dl>
+					<dd><i class="user1"></i></dd>
+					<dt><i></i>和粉丝互动积极，可谓爱投顾“服务标兵”</dt>
+				</dl>
+				<dl>
+					<dd><i class="user2"></i></dd>
+					<dt><i></i>直播语言幽默风趣，自我营销水到渠成，从未刻意营销</dt>
+				</dl>
+				<dl>
+					<dd><i class="user3"></i></dd>
+					<dt><i></i>深谙用户心理，从用户角度出发，对于自身错误及时承认改正，实事求是</dt>
+				</dl>
+				<dl>
+					<dd><i class="user4"></i></dd>
+					<dt><i></i>擅长仓位控制，稳健投资为主，很少经历大起大落</dt>
+				</dl>
+			</aside>
+		</div>
+		<div class="footer img-size" data-width="740" data-height="506"></div>
+	</article>
+	<article class="book-footer img-size" data-width="740" data-paddingleft="100" data-paddingright="60">
+		<div class="content">
+			<h1>活动规则</h1>
+			<ol>
+				<li>1. 活动期间，用户可通过爱投顾APP平台选取新时代证券进行开户，在开户成功后获得30元现金奖励，支持一人多户；</li>
+				<li>2. 成功开户的用户，还可免费获得超人气达人王伦10月份开户专属强者恒强内参一份；</li>
+				<li>3. 开户现金奖励将在用户成功开户后的3个工作日内通过微信统一发放。用户以接收到爱投顾发送的短信提示获取“红包兑换码”；在关注“爱投顾”微信公众号后，发送“红包兑换码”到公众号【领红包】处，自动领取30元的现金红包。（提示：爱投顾工作人员将通过开户填写的手机号与您联系，请务必保持手机服务状态）</li>
+				<li>4. 王伦开户专属强者恒强内参将在开户成功后的3个工作日，直接发放到用户的爱投顾帐号内，无需用户用优惠券再次购买，用户可在“我的--内参”里查看。</li>
+			</ol>
+			<div class="activity-sm">本活动为“爱投顾”独家主办，活动奖励均由“爱投顾”发放，
+	用户可拨打客服电话咨询活动详情：<em>400-166－1188</em></div>
+			<h1>微信兑奖须知</h1>
+			<ol>
+				<li>
+					1. 活动期间，用户在开户成功后的3个工作日内会收到“爱投顾”短信提示发送的一个红包兑换码：请收到红包兑换码，扫一扫右侧二维码或直接在微信里搜索“爱投顾”，关注 “爱投顾”微信公众号，点击菜单【领红包】处发送兑换码，自动领取相应的现金红包；
+					<i class="weixin"></i>
+				</li>
+				<li>2. 每个兑换码仅可使用一次，无法重复使用，请妥善保管，丢失概不负责；</li>
+				<li>3. 请在兑换码有效期内尽快兑换，逾期作废；</li>
+			</ol>
+			<div class="sm">
+				说明：<span>如果遇到领取红包失败，请联系我们的客服
+<em>400-166-1188</em>人工帮助解决。</span>
+			</div>
+			<div class="submit">
+				<div class="btn img-size" data-width="436" data-height="93"></div>
+				<p>活动解释权归爱投顾所有</p>
+			</div>
+		</div>
+	</article>
+	<div class="footer-bg img-size" data-marginleft="64" data-width="647" data-height="175" data-marginbottom="150"></div>
+	<div class="box-bg img-size" data-height="633"></div>
+</article>
+<div class="hide remove-hide">
+	<img class="layout-img" data-src="http://i0.jrjimg.cn/zqt-red-1000/focus/focus20160913/app/book-top.png">
+	<img class="layout-img" data-src="http://i0.jrjimg.cn/zqt-red-1000/focus/focus20160913/app/box.jpg">
+	<img class="layout-img" data-src="http://i0.jrjimg.cn/zqt-red-1000/focus/focus20160913/app/btn.png">
+	<img class="layout-img" data-src="http://i0.jrjimg.cn/zqt-red-1000/focus/focus20160913/app/logo.png">
+	<img class="layout-img" data-src="http://i0.jrjimg.cn/zqt-red-1000/focus/focus20160913/app/pic1.png">
+	<img class="layout-img" data-src="http://i0.jrjimg.cn/zqt-red-1000/focus/focus20160913/app/pic2.png">
+	<img class="layout-img" data-src="http://i0.jrjimg.cn/zqt-red-1000/focus/focus20160913/app/user1.png">
+	<img class="layout-img" data-src="http://i0.jrjimg.cn/zqt-red-1000/focus/focus20160913/app/user2.png">
+	<img class="layout-img" data-src="http://i0.jrjimg.cn/zqt-red-1000/focus/focus20160913/app/user4.png">
+	<img class="layout-img" data-src="http://i0.jrjimg.cn/zqt-red-1000/focus/focus20160913/app/weixin.jpg">
+</div>
+<script>
+	var  AppName='${source}'
+		,appver = '${appver}' //版本号//版本号设置为3.0.0 这种格式 
+		,loginStatus = '${loginStatus}' //0是登录 -1是未登录 -2 是失效;
+		
+</script>
+<script type="text/javascript" src="http://i0.jrjimg.cn/zqt-red-1000/focus/focus20160913/app/main.js"></script></body>
+</html>
+<script src="http://js.jrj.com.cn/common/foot/jrj_dcs_tag-min.js" type="text/javascript"></script>

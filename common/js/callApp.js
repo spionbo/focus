@@ -18,7 +18,7 @@ module.exports = {
 	ask : function( name , id ){ //提问
 		login(()=>{
 			if( name && id ){
-				jrj.jsCallNative(125, JSON.stringify({ username: name, userid: id }));
+				jrj.jsCallNative(125, JSON.stringify({ username: name, userid: id , usernanme: name })); //usernanme ios 错误
 			}else{//大厅
 				jrj.jsCallNative(125, '');
 			}
