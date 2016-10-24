@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "publish-win": "set NODE_ENV=prod&&webpack -p --progress --colors",
+    "build": "set NODE_ENV=build&& webpack --progress --hide-modules --config webpack.config.js",
+    "build1": "set NODE_ENV=build1&& webpack --progress --hide-modules --config webpack.config.js",
+    "dev-mac": "export NODE_ENV=dev&&webpack-dev-server",
+    "dev": "set NODE_ENV=dev&&webpack --colors  --progress --config webpack.config.js",
+    "dev1": "set NODE_ENV=dev1&&webpack --colors  --progress --config webpack.config.js",
+    "ftp": "gulp ftp --gulpfile gulpfile.babel.js"
+  }
+}

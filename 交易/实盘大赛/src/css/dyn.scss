@@ -1,0 +1,48 @@
+@import '../../../common/css/global';
+body{ background: #EFEFF4; }
+::input-placeholder { color: #DBDBDB;}
+::-webkit-input-placeholder { color: #DBDBDB;}
+.dyn{ @include flex(); margin-top:$s10;  background-color: #fff; overflow-x: hidden;
+	nav{ height: $s40; @include border(#DBDBDB); @include box(); background-color: #F8F8F8;
+		h2{ height: $s40; line-height: $s40; display: inline-block; font-size: $s15; font-weight: 400; color: #333; @include box-sizing();}
+		li{ @include flex(); height: 100%; text-align: center;}
+		li.current h2{ @include border(#F24637);  color: #F24637;  }
+	}
+	.option{
+		> .list{ /*交易动态*/
+			> section{ @include box(); @include border(#DBDBDB);  margin-left: $s12; padding: $s18 $s12 $s18 0;
+				> div{ @include flex(); line-height: $s18;
+					time,em{ font-weight: normal; color: #878C92; }
+					h2,h3{ height: $s20; color: #333; @include font-size($s14);font-weight: normal;}
+					.tag{ display: inline-block; padding:0 $s3; @include size(height,1.125rem); @include size(line-height, 1.125rem); margin-right: $s5; color:#F24637; border:$s1 solid #F24637; border-radius: $s2; text-align: center; @include font-size($s12); }
+					.blue{ border-color: #3996F2; color: #3996F2; }
+					time,em{ @include font-size($s12); color: #878C92; letter-spacing:-$s1;}
+				}
+				.tit{ width:6.875rem; }
+				.submit{ width:3.25rem;  @include box(); @include boxCenter(end); @include boxMiddle();
+					 .btn{ width: 3.25rem; height: 1.75rem; line-height: 1.75rem; border-radius:$s3; background: #F24637; color: #fff; @include font-size($s12); text-align: center;} 
+				}
+			}
+		}
+		> .listHouse{/*当前持仓*/
+			ul{ @include box(); padding: $s14 0; @include border(#DBDBDB);
+				li{ @include flex(); @include font-size($s14); text-align: center;}
+				.name{ width: $s50; text-align: left;}
+				.house{ width: $s40; }
+				.price{ width: $s30; }
+				.rate{ width:$s40; text-align: right; }
+				em{ color:#F24637; }
+				em.green{ color: #2DC678; }
+			}
+			.tit{
+				height:$s30; line-height:$s30; background: #EEEEEE;
+				ul{ padding: 0 $s12;
+					li{ @include font-size($s12); color: #878C92; }
+				}
+			}
+			> .content{  color: #333;
+				ul{margin-left: $s12; padding-right:$s12;}
+			}
+		}
+	}
+}

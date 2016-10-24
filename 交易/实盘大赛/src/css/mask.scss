@@ -1,0 +1,8 @@
+@import '../../../common/css/global';
+body{ background: #EFEFF4; }
+::input-placeholder { color: #DBDBDB;}
+::-webkit-input-placeholder { color: #DBDBDB;}
+#Mask{
+	position: fixed; left:0; top:0; width: 100%; height: 100%; background: #EFEFF4; @include transform(translateX(100%),.5s); opacity: 0;
+	.mask-content{ width: 100%; height: 100%; }
+}

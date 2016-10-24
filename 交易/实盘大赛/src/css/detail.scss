@@ -1,0 +1,50 @@
+@import '../../../common/css/global';
+body{ background: #EFEFF4; }
+::input-placeholder { color: #DBDBDB;}
+::-webkit-input-placeholder { color: #DBDBDB;}
+#Dyn{
+	@include flex(); background: #fff;
+}
+.detail{ @include transform(translateY(300px),1s); opacity:0;
+	height: 100%; overflow-x: hidden; overflow-y:auto;
+	.chart{ height:240px; background: #fff;
+		.title{ background: #FAFAFA; padding: 0 $s12; @include size(height,$s40); @include size(line-height,$s40); @include border(#DBDBDB);
+			h2{ font-weight: normal; font-size: $s15; color: #333333; }
+			.right{ float: right; font-size: $s12; color: #878C92;}
+			i{ display: inline-block; margin-right: $s3; vertical-align: middle; @include size(width,$s6); @include size(height,$s6); background: #FF7B57; border-radius: 100%; }
+			i.c1{}
+			i.c2{ margin-left:$s10; background: #98CEF7; }
+		}
+	}
+	#Chart{ height:200px;}
+	.effect{ height: auto; }
+	> section{ position: relative; z-index: 1; margin-bottom: $s10; padding: $s15; background: #fff; overflow: hidden;
+		@include box();
+		.tag-shipan{ position: absolute; left: 0; top: 0; width:2.78125rem; height: 2.78125rem;  @include contain('../images/shipan.png',2.78125rem auto); }
+		li{ @include font-size($s14); }
+		>div{ @include flex(); }
+		.count{ width: 40%; text-align: center;
+			h4,p{ color: #878C92; font-weight: normal;  @include font-size($s14);}
+			em{ display: block; margin-bottom: $s9; @include font-size(1.9375rem); color: #878c92; }
+			em.red{ color: #F24439; }
+			em.green{color: #2DC678;}
+		}
+		.num{ line-height: $s25;
+			ul{ height: $s20; @include box(); @include boxCenter(end);
+				li:first-child{ width:$s70; padding-right: $s10; color:#878C92; text-align: right; }
+				li:last-child{ width:50%; color: #333; @include font-size($s14); text-align: right;}
+				.line{ float: left; width: $s1; height: $s10; margin-top: $s8; margin-right: $s10; background:#AEB1B4; }
+				em{ color:#878c92; }
+				em.red{ color:#F24637; }
+				em.green{ color: #2DC678;}
+			}
+		}
+	}
+}
+.share_btn{ position: fixed; right: $s15; bottom: $s15; width: $s40; height: $s40; @include contain('../images/share_btn.png');}
+.app-download { position:fixed; z-index:999; width:100%;padding:16px 15px;background:rgba(0,0,0,0.8);bottom:0;left:0; color:#fff; font-size:.9rem;justify-content: space-between; @include box(); @include box-sizing(); @include duration(1s);
+	div{ @include flex(); }
+	.text{ line-height:35px; padding-right:10px; font-size:.875rem;}
+	.submit .btn{ display:inline-block; height:35px;line-height:35px; padding:0 15px; color:white; border-radius:3px; background:#f6554a; }
+}
+.app-download.hide { -moz-transform:translateY(100px); -ms-transform:translateY(100px); -o-transform:translateY(100px); -webkit-transform:translateY(100px); transform:translateY(100px);}
