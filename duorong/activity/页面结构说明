@@ -1,0 +1,33 @@
+font
+字体
+
+js
+所有的JS
+
+templates
+所有的html模块
+
+style
+所有的css
+
+images
+图片
+
+
+common
+ 一些常用的功能，比如 时间管理，filter 服务，获取版本号，统计参数等
+
+data
+数据管理
+
+layouts 
+所有展示的页面，非公共页面
+
+modules 
+所有共用的页面，公共模块
+
+plugins
+插件 匡架等
+
+widgets
+自己写的或网上找的小匡架，小部件等

@@ -1,0 +1,286 @@
+@import '../../../common/style/global';
+body{
+	 margin:0 auto;
+    background: radial-gradient(50% 20%,#e90024, #900f1e); 
+	background: -webkit-radial-gradient(50% 20%, #e90024, #900f1e); 
+}
+.img{ width:100%; }
+.topEffect{ position:relative; z-index:1;
+	background:url(../images/topeffect.png) no-repeat; background-size:100% auto;
+	.light{ background:url(../images/light.png) no-repeat; background-size:contain;
+		@include animation(light infinite 1s linear);
+		@include keyframes(light) {
+		    50%{ opacity:.5;}
+		}
+	}
+	.lu{ position:absolute; background:url(../images/lu.png) no-repeat; background-size:contain;}
+}
+.textEffect{ position:relative; z-index:1;
+	.text{background:url(../images/text.png) no-repeat; background-size:contain;}
+	.laoren{
+		position:absolute; background:url(../images/laoren.png) no-repeat; background-size:contain;
+		top:0;
+	}
+	.qiqiu{
+		top:0;
+		transform-origin:center bottom; -webkit-transform-origin:center bottom;
+		position:absolute; background:url(../images/qiqiu.png) no-repeat; background-size:contain;
+		@include animation(qiqiu infinite 5s linear);
+		@include keyframes(qiqiu) {
+		    50%{ transfrom:rotate(5deg); -webkit-transform:rotate(5deg);}
+		}
+	}
+	.xueren{
+		top:0; transform-origin:center bottom; -webkit-transform-origin:center bottom;
+		position:absolute; background:url(../images/xueren.png) no-repeat; background-size:contain;
+		@include animation(xueren infinite 2s linear);
+		@include keyframes(xueren) {
+		    50%{ transfrom:rotate(5deg); -webkit-transform:rotate(5deg);}
+		}
+	}
+}
+.yaojinbi{
+	ul{ @include box; @include boxCenter;
+		li{ @include flex; }
+		li:nth-child(1){ @include contain('../images/prize1.png')}
+		li:nth-child(2){ @include contain('../images/prize2.png')}
+		li:nth-child(3){ @include contain('../images/prize3.png')}
+	}
+	.haoli{ position:relative; z-index:5; margin:0 auto; @include contain('../images/haoli.png');
+		.text{ @include font-size(16px); position:absolute; color:#fff7c1;
+			>div{display:inline-block;}
+			em{ color:#be0016;}
+		}
+		.btn{ @include contain('../images/btn.png'); vertical-align:middle;}
+	}
+}
+.draw-demo{margin:0 auto;
+	.redbg{ 
+		background: radial-gradient(#bf3c31, rgba(140,30,25,.98));
+		background: -webkit-radial-gradient(#bf3c31,rgba(140,30,25,.98));
+		@include box; @include boxMiddle; @include boxCenter; @include box-orient;
+		h2{ @include font-size(25px); color:#fff; font-weight:normal; }
+		h3{ @include font-size(20px); color:#fff; font-weight:normal;}
+		em{ color:#fffb8b; }
+	}
+}
+.draw{ position:relative; z-index:1; overflow:hidden;
+	 @include contain('../images/draw.png');
+	.submit{ position:absolute; text-align:center;
+		>div{ display:inline-block; margin:0 10px;}
+		.btn1{ @include contain('../images/btn1.png',100%); 
+			&:hover{ background-position:0 bottom;}
+		}
+		.btn10{ @include contain('../images/btn10.png',100%); 
+			&:hover{ background-position:0 bottom;}
+		}
+		.unbind{ 
+			-webkit-filter: grayscale(50%); filter: grayscale(50%);
+		}
+	}
+}
+.draw-footer{ padding:1.25rem; border-bottom-left-radius:0.3125rem; border-bottom-right-radius:0.3125rem;
+	background:#740011; box-shadow:0 5px 5px rgba(0,0,0,.2);
+	color:#fff7c1; @include font-size(16px);
+	>div{
+		 @include box; @include boxMiddle; @include align-items;
+	}
+	.text{ @include flex; @include flex-grow(2);@include box-flex; }
+	.btn{ @include contain('../images/btn2.png'); background-position:right 0; @include flex-grow;}
+	p{ clear:both; padding:0.3125rem 0; @include font-size(12px); @include size(line-height,26px); text-align:center; color:#ffe001;}
+
+
+}
+.Investment{ padding:1.875rem 0 3.125rem; overflow:hidden;
+	.btn{ @include contain('../images/btn3.png'); margin:0 auto;}
+}
+.border-box{
+	.top{ height:1.875rem; @include contain('../images/bordertop.jpg',100% auto);}
+	.footer{ height:1.875rem; @include contain('../images/borderbottom.jpg',100% auto);}
+	.content,.title{ @include contain('../images/border.jpg',100% auto); background-repeat: repeat-y;}
+}
+.prizes{
+	position:relative; z-index:6; padding:1.25rem;
+	background:#fff;
+	.bg{ position:absolute; width:100%; left:0; @include contain('../images/tree.png',100% auto);}
+	.my-money{
+		color:#9d1426; @include font-size(17px);
+		.btn{ float:right; @include contain('../images/btn4.png');}
+	}
+	.tit{ margin-bottom:0.625rem; @include contain('../images/tit.jpg',auto 100%); background-position:center 0;}
+	.cnt{ overflow:hidden;}
+	.content{ padding:0 20px;}
+	.nav{ @include box; @include transition-duration(.5s);
+		height:33px;  border:2px solid #a96149; border-radius:5px;
+		li{ @include flex; height:33px; line-height:33px; color:#c13200; text-align:center; @include font-size(18px); @include box-flex;@include flex-grow;
+			&.current{ background:#c13200; color:#fff; }
+			&:not(:last-child){ border-right:1px solid #872300;}
+		}
+	}
+	//.options{ @include transition-duration(.5s); overflow:hidden;}
+	.option{ 
+		@include transition-duration(.5s); overflow:hidden;
+		ul{ @include box; padding:0.625rem 0; @include boxCenter;}
+		li{ text-align:center; @include size(padding-left,4px);@include size(padding-right,4px); @include box-sizing;
+			@include flex; @include box-flex;
+			.img{ display:box; display:-webkit-box; box-align:center; -webkit-box-align:center; margin:0 auto; }
+			.pic{ margin:0 auto; @include box-sizing; text-align:left;
+				img{ width:100%; height:100%;}
+				em{ padding-left:0.3125rem; @font-size(13px); color:#fff; }
+			}
+			p{ padding:0.3125rem 0; @include font-size(13px);
+				em{ color:#c13200;}
+			}
+			.btn{ @include size(height,25px); @include size(line-height,25px); text-align:center; background:#ffed98; border:1px solid #ffb821; border-radius:0.3125rem; @include font-size(16px); color:#c13200;}
+
+			&.last{display:box; display:-webkit-box; box-align:end; -webkit-box-align:end;box-pack:end; -webkit-box-pack:end;}
+		}
+		.quan{ @include contain('../images/prize6.png'); }
+	}
+	.jiaxi{
+		.img{ @include contain('../images/quan1.jpg'); @include boxCenter; @include box-sizing;  padding-top:1.25rem;
+			em{ @include font-size(35px); color:#c13200;}
+		}
+		.last{ 
+			.pic{ margin:0 auto;}
+			img{ width:100%; height:100%;}
+		}
+	}
+	.hongbao{
+		li{
+			.img{ @include contain('../images/hongbao.jpg'); @include box-sizing; @include size(padding-top,25px); @include boxCenter;  @include boxMiddle(start); 
+				em{ @include font-size(20px); color:#fff261;}
+			}
+		}
+		.last{ 
+			.pic{ margin:0 auto;}
+			img{ width:100%; height:100%;}
+		}
+	}
+}
+.rule{
+	 padding:0 1.25rem 1.25rem; background:#fff; 
+	 .tit{ margin-bottom:0.625rem; @include contain('../images/tit1.jpg',auto 100%); background-position:center 0;}
+	 h2{ line-height:1.25rem; padding:0.3125rem 0; @include font-size(16px); color:#b54400; }
+	 p{ padding:0.3125rem 0; @include font-size(14px); @include size(line-height,26px); color:#b54400;
+		&.red{ color:red;}
+		&.small{ @include font-size(12px);}
+	 }
+	 .content{ padding:0 20px;}
+
+}
+.pop{
+	&.jiangliguize{
+		.pop-cnt{
+			margin-bottom:0; padding:0; @include size(padding-top,10px); background:none; @include contain('../images/popbg-top.png',100% auto);
+			.footer{ @include contain('../images/popbg-footer.png',100% auto); }
+			.content{
+				margin:0; padding:0.3125rem 0.9375rem; color:#cb2428;
+				h2{ height:3.125rem; line-height:3.125rem; text-align:center; font-weight:normal;}
+				.table{
+					table{ border-top:1px solid #ce3336; border-left:1px solid #ce3336;}
+					th,td{ padding:0.3125rem; @include font-size(16px); border-bottom:1px solid #ce3336; border-right:1px solid #ce3336; }
+					th{ padding:0.5rem 0.3125rem; text-align:center;}
+					td:last-child{ text-align:right;}
+				}
+			}
+			.close{ top:0.3125rem; right:0.3125rem; @include size(width,30px); @include size(height,30px); @include contain('../images/close.png');}
+		}
+	}
+	&.exchange{
+		.pop-cnt{ width:80%; padding:0; border-radius:0.3125rem;
+			.close{ top:0.3125rem; right:0.3125rem; @include size(width,30px); @include size(height,30px); @include contain('../images/close.png');}
+			.title{ width:auto; height:2.5rem; line-height:2.5rem; margin:0 1.5625rem; border-bottom:1px solid #cb2428; @include font-size(20px); color:#cb2428;}
+			.content{
+				padding:1.25rem;
+				p{ padding:0.625rem 0; text-align:center; line-height:1.5625rem; @include font-size(16px); color:#cb2428;}
+				
+			}
+		}
+		.error{ width:auto; margin:-1.25rem 1.25rem 1.25rem; background:#fff000; @include box-sizing;}
+		.succee{ background:#fff; color:#00b40d;}
+		.submit{ @include box-sizing; padding:0; border-bottom-left-radius:0.3125rem; border-bottom-right-radius:0.3125rem; border:1px solid #cb2428;}
+		.btn{ 
+			@include font-size(16px); border-radius:0; background:#ffffff; color:#cb2428; border:0;
+			&.red{ background:#cb2428; color:#fff; border:0;}
+			&:not(:first-child){ margin:0; }
+			&:first-child{  border-bottom-left-radius:0.3125rem;}
+			&:last-child{ border-bottom-right-radius:0.3125rem;}
+		}
+		&.onebtn{
+			.submit{ border:none;}
+			.btn{ display:inline-block; width:9.375rem; height:2.5rem; line-height:2.5rem; margin-bottom:1.25rem; background:#cb2428; border-radius:0.3125rem; color:#fff;}
+		}
+		&.inves{
+			.pop-cnt{
+				.content{
+					p{ text-align:left;}
+				}
+			}
+		}
+		&.address{
+			li{ padding:0.625rem 0;
+				input{ width:100%; height:1.875rem; line-height:1.875rem; padding:0.625rem; border:1px solid #dc6d70; border-radius:0.3125rem; @include box-sizing; 
+				}
+			}
+		}
+	}
+	&.mingxi{ //我的收入明细
+		.pop-cnt{
+			margin-bottom:0; padding:0; @include size(padding-top,10px); background:none; @include contain('../images/popbg-top.png',100% auto);
+			.footer{ @include contain('../images/popbg-footer.png',100% auto); }
+		}
+		.nav{ margin-bottom:0.625rem;
+			@include box; border:1px solid #ce3336; border-radius:0.3125rem;
+			li{
+				@include box-flex; color:#cb2428; height:2.375rem; line-height:2.375rem; text-align:center;
+				&.current{ background:#cb2428; color:#fff;}
+			}
+		}
+		.title{ margin-bottom:0; height:2.8125rem; line-height:2.8125rem; font-size:1.125rem; color:#cb2428;}
+		.content{
+			margin:0; padding:0.3125rem 0.9375rem; @include box; @include box-orient;
+			.effect{
+				h3{ color:#cb2428; @include font-size(15px); font-weight:normal;}
+				time{ @include font-size(12px); color:#b4b4b4;}
+				li{ padding:0.1875rem 0; line-height:1.375rem; }
+			}
+			.cnt{ @include box-flex; overflow-y:scroll; -webkit-perspective:600px;}
+		}
+		.close{ z-index:999; top:0.3125rem; right:0.3125rem; @include size(width,30px); @include size(height,30px); @include contain('../images/close.png');}
+		.effect{ width:999rem;}
+		.option{
+			
+		}
+	}
+	&.winning{
+		.pop-cnt{ background:none; }
+		.close{ z-index:999; top:0.3125rem; right:0.3125rem; @include size(width,30px); @include size(height,30px); @include contain('../images/close.png');}
+		.content{
+			position:relative; z-index:1;
+			.img{ padding-top:3.125rem;}
+			.num{ font-size:1.0625rem; position:absolute; left:0; width:100%; top:0; text-align:center; color:#ffe001;}
+			.m{ position:absolute;left:0; bottom:0; opacity:1; height:2.5rem; @include transition-duration(2s); font-size:.875rem; color:#ffe001;}
+		}
+	}
+}
+.transtion-box{
+	.box{ position:relative; z-index:1; float:left; overflow:hidden;}
+	ul{ position:absolute; left:0; top:0; width:100%;}
+	li{ width:100%; height:100%; @include contain('../images/draw/d.png'); background-position:center center;
+		&.bg2{ background-image:url('../images/draw/f.png')}
+		&.bg3{ background-image:url('../images/draw/l.png')}
+		&.bg4{ background-image:url('../images/draw/q.png')}
+		&.bg5{ background-image:url('../images/draw/s.png')}
+		&.bg6{ background-image:url('../images/draw/y.png')}
+		&.bg7{ background-image:url('../images/draw/z.png')}
+	}
+}
+.money{ position:fixed; top:0; left:0; z-index:999; width:100%;
+	i{ position:absolute; width:2.5rem; height:1.875rem; @include transition-duration; @include contain('../images/money/m1.png'); background-position:center center;
+		&.bg2{ background-image:url('../images/money/m2.png'); }
+		&.bg3{ background-image:url('../images/money/m3.png'); }
+		&.bg4{ background-image:url('../images/money/m4.png'); }
+		&.bg5{ background-image:url('../images/money/m5.png'); }
+	}
+}
