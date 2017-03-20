@@ -1,0 +1,24 @@
+@import 'global.scss';
+$sjianwidth : $s20;
+.explain{
+	
+ 	span{height:$sjianwidth; width:$sjianwidth; display:block; position:relative;} 
+	.demoSpan1{overflow:hidden; width:$sjianwidth/1.8;}
+	.demoSpan1:before{content:''; height:$sjianwidth/2; width:$sjianwidth/2; display:block; border:$s5/2 solid #333; border-left-width:0; border-top-width:0; transform:rotate(-45deg);-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-o-transform:rotate(-45deg);-ms-transform:rotate(-45deg); position:absolute; top:$s7; right:$s7;}
+	
+	li{
+		@include box;
+		padding:$s10 0;
+		.text{ @include box-flex; line-height:$s25;}
+	}
+
+	.pop-cnt{ max-width:none; @include contain('../images/main/activity-pop.png');
+
+		.content{ 
+			margin-bottom:$s10; padding:0 $s15; color:#000;
+			@include align-items(flex-start);
+			@include justify-content(flex-start);
+		}
+	}	
+	.close{ width:$s50; height:$s50; background:none;}
+}

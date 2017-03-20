@@ -1,0 +1,86 @@
+@import 'global.scss';
+body, div, p, h1, h2, h3, h4, h5, h6, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, table, th, td { margin: 0; padding: 0; }
+address, cite, em, i { font-style: normal; }
+html,body,root{ height:100%; overflow:hidden;}
+body{ margin:0 auto; color:#fff; -webkit-appearance: none; background:#fff; overflow-y:scroll; font-family:'PingFang SC','STHeiti','Microsoft YaHei',Helvetica,Arial,sans-serif; color: #878C92;}
+li { list-style: none; }
+html,body{ max-width:750px; margin:0 auto;}
+a { color:#535862; text-decoration: none; }
+a:hover { color:#c40000; text-decoration: underline; }
+img { border: 0; }
+table { border-collapse: collapse; border-spacing: 0; }
+input[type="button"], input[type="submit"], input[type="reset"] { cursor: pointer;-webkit-appearance: none; }
+/* close commented backslash hack */
+::-webkit-input-placeholder{ font-size:.75rem;  }
+body{ height:100%; background:#f8f8f8; }
+/* public */
+input{outline: none;}
+#app{ width:100%; height:100%; position:relative; z-index: 1; overflow:hidden;
+  .child-transition{ height:100%; -webkit-perspective: 600px;}
+  .module-scroll{ height:100%; overflow-y:scroll;}
+}
+
+
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s ease;
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}
+.child-view {
+  //position: absolute;
+  transition: all .5s cubic-bezier(.55,0,.1,1);
+  -webkit-transition: all .5s cubic-bezier(.55,0,.1,1);
+}
+.slide-left-enter, .slide-right-leave-active {
+  opacity: 0;
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+.slide-left-leave-active, .slide-right-enter {
+  opacity: 0;
+  -webkit-transform: translate(-30px, 0);
+  transform: translate(-30px, 0);
+}
+
+@mixin position {
+    position: absolute;
+    width:100%
+}
+.main-section{
+    @include transition-duration(.5s);
+    &.left-endter,&.left-leave-active,&.left-enter-active{
+        @include position;
+        opacity:0;
+        @include transform(translateX(-100%));
+    }
+    &.left-enter-to,&.left-leave-active{
+        @include position;
+        opacity: 1;
+        @include transform(translateX(0%));
+    }
+    &.left-leave-to{
+        @include position;
+        @include transform(translateX(-100%));
+        opacity: 0;
+    }
+}
+.module1,.module2,.module3,.module4,.module5,.child-transition{
+    @include transition-duration(.5s);
+    &.left-leave-active,&.left-enter-active{
+        @include position;
+        opacity:0;
+        @include transform(translateX(100%));
+    }
+    &.left-enter-to,&.left-leave-active{
+        @include position;
+        opacity: 1;
+        @include transform(translateX(0%));
+    }
+    &.left-leave-to{
+        @include position;
+        @include transform(translateX(100%));
+        opacity: 0;
+    }
+}

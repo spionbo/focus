@@ -1,0 +1,29 @@
+@import 'global.scss';
+.tip-pop{
+	.title{
+		i{ display:block; 
+			&.bg1{ @include contain('../images/pop/txt2.png'); }
+		}
+	}
+	.pop-cnt{ 
+		max-width:none; @include contain('../images/pop/pop.png');
+		.content{ color:#fff; text-align:center; }
+		.close{
+			right:0; top:0; width:$s50; height:$s50; background:none;
+		}
+		.title-bg{
+			margin:0 auto; @include box; @include boxCenter; @include boxMiddle;
+			@include contain('../images/pop/tit.png');
+			i{
+				&.bg1{@include contain('../images/pop/txt2.png');}
+			}
+		}
+		.submit{
+			.btn{
+				margin:0 auto;
+				&.home{ @include contain('../images/pop/btn1.png') }
+			}
+		}
+		h2{ padding:$s10 0; font-size:$s20; color:#fff600; }
+	}
+}

@@ -1,0 +1,215 @@
+@import 'global';
+.modal-mask {
+    position: fixed;
+    z-index: 998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    @include box; @include boxCenter; @include boxMiddle;
+    @include transition-duration(.5s);
+    .modal-wrapper {
+    }
+
+    .modal-container {
+        @include transition-duration(.5s);
+        @include box;
+        @include box-orient;
+        position:relative; z-index:999;
+        background:#fff; color:#fff;
+        @include contain('../images/pop/pop.png');
+    }
+    .close{
+        position:absolute; right:0; top:0; width:$s50; height:$s50; background:rgba(0,0,0,0);
+    }
+    .modal-header{
+        .title-bg{
+            margin:0 auto; @include box; @include boxCenter; @include boxMiddle;
+            @include contain('../images/pop/tit.png');
+            i{ display:block; }
+        }
+    }
+
+    .modal-body {
+        
+        h2{ padding:$s10 0; font-size:$s20; color:#fff600; }
+    }
+
+    .modal-footer{
+        .btn{
+            margin:0 auto;
+        }
+    }
+
+    //modal
+    &.modal-enter {
+        opacity: 0;
+    }
+    &.modal-leave-active {
+        opacity: 0;
+    }
+    &.modal-enter,&.modal-leave-active{
+        .modal-container,.modal-container {
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+    }
+    //bounceIn
+    @mixin bounceIn{
+        -webkit-animation-fill-mode: both;  animation-fill-mode: both; opacity:0;
+        -webkit-animation-duration: .5s;
+         animation-duration: .5s;
+        -webkit-animation-name: bounceOut;
+        animation-name: bounceOut;
+        @-webkit-keyframes bounceOut {
+          20% {
+            -webkit-transform: scale3d(.9, .9, .9);
+            transform: scale3d(.9, .9, .9);
+          }
+          50%, 55% {
+            opacity: 1;
+            -webkit-transform: scale3d(1.1, 1.1, 1.1);
+            transform: scale3d(1.1, 1.1, 1.1);
+          }
+          to {
+            opacity: 0;
+            -webkit-transform: scale3d(.3, .3, .3);
+            transform: scale3d(.3, .3, .3);
+          }
+        }
+        @keyframes bounceOut {
+          20% {
+            -webkit-transform: scale3d(.9, .9, .9);
+            transform: scale3d(.9, .9, .9);
+          }
+
+          50%, 55% {
+            opacity: 1;
+            -webkit-transform: scale3d(1.1, 1.1, 1.1);
+            transform: scale3d(1.1, 1.1, 1.1);
+          }
+
+          to {
+            opacity: 0;
+            -webkit-transform: scale3d(.3, .3, .3);
+            transform: scale3d(.3, .3, .3);
+          }
+        }
+    }
+    @mixin bounceIn-cur{
+        opacity:1;
+        -webkit-animation-name: bounceIn;
+        animation-name: bounceIn;
+        @at-root{
+            @-webkit-keyframes bounceIn {
+              from, 20%, 40%, 60%, 80%, to {
+                -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+                animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+              }
+
+              0% {
+                opacity: 0;
+                -webkit-transform: scale3d(.3, .3, .3);
+                transform: scale3d(.3, .3, .3);
+              }
+
+              20% {
+                -webkit-transform: scale3d(1.1, 1.1, 1.1);
+                transform: scale3d(1.1, 1.1, 1.1);
+              }
+
+              40% {
+                -webkit-transform: scale3d(.9, .9, .9);
+                transform: scale3d(.9, .9, .9);
+              }
+
+              60% {
+                opacity: 1;
+                -webkit-transform: scale3d(1.03, 1.03, 1.03);
+                transform: scale3d(1.03, 1.03, 1.03);
+              }
+
+              80% {
+                -webkit-transform: scale3d(.97, .97, .97);
+                transform: scale3d(.97, .97, .97);
+              }
+
+              to {
+                opacity: 1;
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+              }
+            }
+
+            @keyframes bounceIn {
+              from, 20%, 40%, 60%, 80%, to {
+                -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+                animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+              }
+
+              0% {
+                opacity: 0;
+                -webkit-transform: scale3d(.3, .3, .3);
+                transform: scale3d(.3, .3, .3);
+              }
+
+              20% {
+                -webkit-transform: scale3d(1.1, 1.1, 1.1);
+                transform: scale3d(1.1, 1.1, 1.1);
+              }
+
+              40% {
+                -webkit-transform: scale3d(.9, .9, .9);
+                transform: scale3d(.9, .9, .9);
+              }
+
+              60% {
+                opacity: 1;
+                -webkit-transform: scale3d(1.03, 1.03, 1.03);
+                transform: scale3d(1.03, 1.03, 1.03);
+              }
+
+              80% {
+                -webkit-transform: scale3d(.97, .97, .97);
+                transform: scale3d(.97, .97, .97);
+              }
+
+              to {
+                opacity: 1;
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+              }
+            }
+        }
+    }
+    &.bounceIn-endter,&.bounceIn-leave-active,&.bounceIn-enter-active{
+        .modal-container{
+            @include bounceIn;
+        }
+    }
+    &.bounceIn-enter-to,&.bounceIn-leave-active{
+        opacity: 1;
+        .modal-container{
+            @include bounceIn-cur;
+        }
+    }
+    &.bounceIn-leave-to{
+        background:rgba(0,0,0,0);
+        opacity: 0;
+    }
+
+    //mask
+    &.mask-endter,&.mask-leave-active,&.mask-enter-active{
+        //opacity:0;
+        @include transform(translateX(100%));
+    }
+    &.mask-enter-to,&.mask-leave-active{
+        //opacity: 1;
+        @include transform(translateX(0%));
+    }
+    &.mask-leave-to{
+        @include transform(translateX(100%));
+        //opacity: 0;
+    }
+}
