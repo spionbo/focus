@@ -1,0 +1,12 @@
+explain 游戏说明
+notStart//活动未开始
+goEnd//您已达到终点
+tips //友情提示
+winning//中奖
+winning1//中奖1
+selectScene //选择骰子方式
+scenedo//骰子转动效果
+selectSceneNum//选择骰子
+selectSceneResult//确认选择骰子 点数
+address//填写联系方式
+prizedo//抽奖

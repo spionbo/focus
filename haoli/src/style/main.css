@@ -1,0 +1,150 @@
+@import 'global';
+body, div, p, h1, h2, h3, h4, h5, h6, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, table, th, td { margin: 0; padding: 0; }
+address, cite, em, i { font-style: normal; }
+html,body,root{ height:100%; overflow:hidden;}
+body{ margin:0 auto; color:#fff; -webkit-appearance: none; background:#fff; overflow-y:scroll; font-family:'PingFang SC','STHeiti','Microsoft YaHei',Helvetica,Arial,sans-serif; color: #878C92;}
+li { list-style: none; }
+html,body{ max-width:750px; margin:0 auto;}
+a { color:#535862; text-decoration: none; }
+a:hover { color:#c40000; text-decoration: underline; }
+img { border: 0; }
+table { border-collapse: collapse; border-spacing: 0; }
+input[type="button"], input[type="submit"], input[type="reset"] { cursor: pointer;-webkit-appearance: none; }
+/* close commented backslash hack */
+::-webkit-input-placeholder{ font-size:.75rem;  }
+body{ height:100%; background:#f8f8f8; }
+/* public */
+input{outline: none;}
+a{-webkit-tap-highlight-color:rgba(255,0,0,0);}
+@define-extend position{
+    position: absolute;
+    width:100%
+}
+
+#app{ width:100%; height:100%; position:relative; z-index: 1; overflow:hidden;
+     -webkit-perspective: 600px;
+     background:#533ac8;
+  .child-transition{ height:100%;}
+  .module-scroll{ height:100%; overflow-y:scroll;}
+}
+.btn{
+    transition-duration:.3s;
+    &:hover{-webkit-filter:brightness(1.2);}
+    &.gray{ filter: grayscale(100%); }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s ease;
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}
+.child-view {
+  transition: all .5s cubic-bezier(.55,0,.1,1);
+}
+.child-transition,.left-sider{
+    transition-duration : .5s;
+    &.left-leave-active{
+        @extend position;
+        opacity:1;
+        transform : translateX(0%);
+        &.left-leave-to{
+            opacity:0;
+            transform : translateX(-100%);
+        }
+    }
+    &.left-enter-active{
+        @extend position;
+        opacity:0;
+        transform : translateX(100%);
+        &.left-enter-to{
+            opacity:1;
+            transform : translateX(0%);
+        }
+    }
+
+    &.right-leave-active{
+        @extend position;
+        opacity:1;
+        transform : translateX(0%);
+        &.right-leave-to{
+            opacity:0;
+            transform : translateX(100%);
+        }
+    }
+    &.right-enter-active{
+        @extend position;
+        opacity:0;
+        transform : translateX(-100%);
+        &.right-enter-to{
+            opacity:1;
+            transform : translateX(0%);
+        }
+    }
+}
+
+.money{
+    position:fixed; z-index:2; width:90%; left:5%;
+    perspective:600px;
+    >div{
+        width:40px; height:40px;
+        position:absolute;
+        @mixin contain '../images/yen_coin.png';
+        background-repeat:no-repeat;
+    }
+    .m_1{
+        top : -50px; left:10%; animation:money1 9s infinite linear;
+        width:30px; height:30px;
+    }
+    .m_2{
+        top : -30px; left:20%; animation:money2 12s infinite linear;
+        width:20px; height:20px;
+    }
+    .m_3{
+        top : -80px; left:30%; animation:money1 7s infinite linear;
+        width:25px; height:25px;
+    }
+    .m_4{
+        top : -150px; left:40%; animation:money2 6s infinite linear;
+        width:16px; height:16px;
+    }
+    .m_5{
+        top : -10px; left:50%; animation:money1 11s infinite linear;
+        width:11px; height:11px;
+    }
+    .m_6{
+        top : -50px; left:60%; animation:money1 9s infinite linear;
+        width:33px; height:33px;
+    }
+    .m_7{
+        top : -30px; left:70%; animation:money2 12s infinite linear;
+        width:22px; height:22px;
+    }
+    .m_8{
+        top : -20px; left:80%; animation:money1 7s infinite linear;
+        width:23px; height:23px;
+    }
+    .m_9{
+        top : -10px; left:90%; animation:money2 6s infinite linear;
+        width:18px; height:18px;
+    }
+    .m_10{
+        top : -70px; left:95%; animation:money1 11s infinite linear;
+        width:33px; height:33px;
+    }
+
+
+
+    @at-root{
+        @keyframes money1{
+            0%{ transform:translate(0,0) rotate(0deg); opacity:1;}
+            90%{ transform:translate(20px,400px) rotateX(300deg); opacity:1;}
+            100%{ transform:translate(25px,450px) rotateX(360deg); opacity:0;}
+        }
+        @keyframes money2{
+            0%{ transform:translate(0,0) rotate(0deg); opacity:1;}
+            90%{ transform:translate(-20px,400px) rotateX(300deg); opacity:1;}
+            100%{ transform:translate(-25px,450px) rotateX(360deg); opacity:0;}
+        }
+    }
+}

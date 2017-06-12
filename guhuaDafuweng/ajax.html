@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script src='http://zeptojs.com/zepto.min.js'></script>
+<!-- data : JSON.stringify({
+		uid : 2
+	}), -->
+</head>
+<body>
+<script>
+function ajax( obj ){
+	$.ajax({
+		url : obj.url , 
+		type : 'POST',
+		dataType : 'json',
+		contentType:'application/json;charset=UTF-8',
+		processData : false,
+		data : JSON.stringify(obj.data),
+		success : obj.success
+	});
+}
+ajax({
+	//url : '/ROOT/activity/prizes.do',
+	url : '/ROOT/activity/tycoon/lucky-bag/get.do',
+	data : {
+		uid : 2
+	},
+	success : function(data){
+		console.log(data)
+	}
+})
+</script>
+</body>
+</html>

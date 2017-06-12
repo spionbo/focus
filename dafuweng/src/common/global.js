@@ -98,14 +98,14 @@ var T = {
     ,localStorage : {
         setItem : function( key , value , obj ){
             if(window.localStorage){
-                localStorage.setItem(key,JSON.stringify(value));
+                localStorage.setItem(key,value);
             }else{
                 $.fn.cookie(key,value,obj);
             }
         },
         getItem : function( name ){
             if(window.localStorage){
-                return JSON.parse(localStorage.getItem(name));
+                return localStorage.getItem(name);
             }else{
                 return $.fn.cookie(name);
             }
@@ -167,12 +167,25 @@ var T = {
     ,goPage : function( step , start ){
 
         var num = info.map.pointOnMap , 
+            map = info.map,
             module = 'module1';
 
-        if(num>118){
+        if(num>info.mapLength){
             module = 'module5';
         }else if(num>96){
             module = 'module5';
+            if(num>=info.mapLength){
+                info.onmap(()=>{
+                    return requirePop('goEnd',{
+                        props: {
+                            num : map.userRank,
+                            name : map.prizeOfRank,
+                            transition : 'bounceIn'
+                        }
+                    });
+                });
+                return;
+            }
         }else if(num>72){
             module = 'module4';
         }else if(num>48){

@@ -1,0 +1,298 @@
+#Loading{
+	position:fixed; z-index:9999; left:0; top:0; right:0; bottom:0;
+	width:100%; height:100%; background:rgba(0, 0, 0, .5);
+	display:-webkit-box;
+	display:-ms-flexbox;
+	display:flex;
+	-webkit-box-orient:vertical;
+	-webkit-box-direction:normal;
+	    -ms-flex-direction:column;
+	        flex-direction:column;
+	-webkit-box-pack:center;
+	    -ms-flex-pack:center;
+	        justify-content:center;
+	-webkit-box-align:center;
+	    -ms-flex-align:center;
+	        align-items:center;
+
+	@-webkit-keyframes loading {
+	  0% {
+	    -webkit-transform: scale(1);
+	            transform: scale(1); }
+	  20% {
+	    -webkit-transform: scale(1, 2.2);
+	            transform: scale(1, 2.2);  }
+	  40% {
+	    -webkit-transform: scale(1);
+	            transform: scale(1);}
+	}
+
+	@keyframes loading {
+	  0% {
+	    -webkit-transform: scale(1);
+	            transform: scale(1); }
+	  20% {
+	    -webkit-transform: scale(1, 2.2);
+	            transform: scale(1, 2.2);  }
+	  40% {
+	    -webkit-transform: scale(1);
+	            transform: scale(1);}
+	}
+
+}
+
+#Loading .loadText{
+	padding-top:10px;
+	padding-top:0.625rem;
+	height:30px;
+	height:1.875rem;
+	line-height:30px;
+	line-height:1.875rem;
+	font-size:20px;
+	font-size:1.25rem;
+	font-weight:normal;
+	color:#fff;
+
+}
+
+#Loading #loadCavans{
+	margin:0 auto;
+	display:block;
+
+}
+
+#Loading .loadingbar .loading-bar {
+	display: inline-block;
+	width:0.25rem;
+	height: 1.125rem;
+	border-radius: 0.25rem;
+	-webkit-animation: loading 1.09s ease-in-out infinite;
+	animation: loading 1.09s ease-in-out infinite;
+
+}
+
+#Loading .loadingbar .loading-bar:nth-child(1) {
+	background-color:#3498db;
+	-webkit-animation-delay: 0;
+	animation-delay: 0;
+
+}
+
+#Loading .loadingbar .loading-bar:nth-child(2) {
+	background-color:#c0392b;
+	-webkit-animation-delay:.09s;
+	animation-delay:.09s;
+
+}
+
+#Loading .loadingbar .loading-bar:nth-child(3) {
+	background-color:#f1c40f;
+	-webkit-animation-delay:.18s;
+	animation-delay:.18s;
+
+}
+
+#Loading .loadingbar .loading-bar:nth-child(4) {
+	background-color:#27ae60;
+	-webkit-animation-delay:.27s;
+	animation-delay:.27s;
+
+}
+
+#Loading .loadingbar .loading-bar:nth-child(5) {
+	background-color:#e8bdff;
+	-webkit-animation-delay:.4s;
+	animation-delay:.4s;
+
+}
+
+#Loading .spinner {
+	width:64px;
+	width: 4rem;
+	height:64px;
+	height: 4rem;
+	-webkit-animation: rotate 1.4s infinite ease-in-out, background 1.4s infinite ease-in-out alternate;
+	animation: rotate 1.4s infinite ease-in-out, background 1.4s infinite ease-in-out alternate;
+
+	@-webkit-keyframes rotate {
+
+		0% {
+			-webkit-transform: perspective(7.5rem) rotateX(0deg) rotateY(0deg);
+			transform: perspective(7.5rem) rotateX(0deg) rotateY(0deg);
+
+		}
+
+		50% {
+			-webkit-transform: perspective(7.5rem) rotateX(-180deg) rotateY(0deg);
+			transform: perspective(7.5rem) rotateX(-180deg) rotateY(0deg);
+
+		}
+
+		100% {
+			-webkit-transform: perspective(7.5rem) rotateX(-180deg) rotateY(-180deg);
+			transform: perspective(7.5rem) rotateX(-180deg) rotateY(-180deg);
+
+		}
+
+	}
+
+	@keyframes rotate {
+
+		0% {
+			-webkit-transform: perspective(7.5rem) rotateX(0deg) rotateY(0deg);
+			transform: perspective(7.5rem) rotateX(0deg) rotateY(0deg);
+
+		}
+
+		50% {
+			-webkit-transform: perspective(7.5rem) rotateX(-180deg) rotateY(0deg);
+			transform: perspective(7.5rem) rotateX(-180deg) rotateY(0deg);
+
+		}
+
+		100% {
+			-webkit-transform: perspective(7.5rem) rotateX(-180deg) rotateY(-180deg);
+			transform: perspective(7.5rem) rotateX(-180deg) rotateY(-180deg);
+
+		}
+
+	}
+
+	@-webkit-keyframes background {
+
+		0% {
+			background-color: #bdfff2;
+
+		}
+
+		50% {
+			background-color: #a78fff;
+
+		}
+
+		100% {
+			background-color: #ffbdbd;
+
+		}
+
+	}
+
+	@keyframes background {
+
+		0% {
+			background-color: #bdfff2;
+
+		}
+
+		50% {
+			background-color: #a78fff;
+
+		}
+
+		100% {
+			background-color: #ffbdbd;
+
+		}
+
+	}
+
+}
+
+#Loading .spinner-loader{
+
+	@-webkit-keyframes spinner-loader {
+
+		0% {
+			-webkit-transform: rotate(0deg);
+			transform: rotate(0deg);
+
+		}
+
+		100% {
+			-webkit-transform: rotate(360deg);
+			transform: rotate(360deg);
+
+		}
+
+	}
+
+	@keyframes spinner-loader {
+
+		0% {
+			-webkit-transform: rotate(0deg);
+			transform: rotate(0deg);
+
+		}
+
+		100% {
+			-webkit-transform: rotate(360deg);
+			transform: rotate(360deg);
+
+		}
+
+	}
+
+}
+/* :not(:required) hides this rule from IE9 and below */
+
+#Loading .spinner-loader:not(:required) {
+	-webkit-animation: spinner-loader 1500ms infinite linear;
+	animation: spinner-loader 1500ms infinite linear;
+	border-radius: 0.5em;
+	box-shadow: #9bddff 1.5em 0 0 0, #9bddff 1.1em 1.1em 0 0, #9bddff 0 1.5em 0 0, #9bddff -1.1em 1.1em 0 0, #9bddff -1.5em 0 0 0, #9bddff -1.1em -1.1em 0 0, #9bddff 0 -1.5em 0 0, #9bddff 1.1em -1.1em 0 0;
+	display: inline-block;
+	font-size: 0.625rem;
+	width: 1em;
+	height: 1em;
+	margin: 1.5em;
+	overflow: hidden;
+	text-indent: 100%;
+
+}
+.modal-header .title-bg[data-v-14b80aa2]{
+}
+.modal-body .notStart[data-v-14b80aa2]{
+    text-align:center;
+}
+.modal-body .notStart p[data-v-14b80aa2]{
+    font-size:0.875rem;
+}
+.modal-body .notStart p //iphone 6 plus
+    @media only screen and (min-device-width : 410px) and (max-device-width : 500px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio:\2.5) and (-webkit-max-device-pixel-ratio:\4.0)[data-v-14b80aa2]{
+    font-size:0.96688rem;
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 340px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio:1) and (-webkit-max-device-pixel-ratio:2){
+.modal-body .notStart p[data-v-14b80aa2]{
+        font-size:0.75rem;
+}
+}
+@media only screen and (min-device-width : 240px) and (max-device-width : 600px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio:0.75) and (-webkit-max-device-pixel-ratio:1.9){
+.modal-body .notStart p[data-v-14b80aa2]{
+        font-size:0.75rem;
+}
+}
+
+.modal-header .title-bg[data-v-6e177258]{
+}
+.modal-body .notStart[data-v-6e177258]{
+    text-align:center;
+}
+.modal-body .notStart p[data-v-6e177258]{
+    font-size:0.875rem;
+}
+.modal-body .notStart p //iphone 6 plus
+    @media only screen and (min-device-width : 410px) and (max-device-width : 500px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio:\2.5) and (-webkit-max-device-pixel-ratio:\4.0)[data-v-6e177258]{
+    font-size:0.96688rem;
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 340px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio:1) and (-webkit-max-device-pixel-ratio:2){
+.modal-body .notStart p[data-v-6e177258]{
+        font-size:0.75rem;
+}
+}
+@media only screen and (min-device-width : 240px) and (max-device-width : 600px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio:0.75) and (-webkit-max-device-pixel-ratio:1.9){
+.modal-body .notStart p[data-v-6e177258]{
+        font-size:0.75rem;
+}
+}
+
+/*# sourceMappingURL=10app.css.map?c11ee17315c239cd5699*/

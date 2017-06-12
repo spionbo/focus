@@ -12,4 +12,6 @@ module.exports = {
     raffle : http+'/activity/tycoon/raffle.do', //抽奖
     realPrizes : http+'/activity/tycoon/real-prizes.do', //终点奖品
     contactGet : http+'/activity/tycoon/contact-get.do', //获取联系人信息
+
+    wealthAndLottery : http+'/activity/tycoon-carry-on/wealth-and-lottery.do'
 }

@@ -52,3 +52,16 @@ storage 存储
 4、更新阶梯
 5、触发阶梯事件
 6、更新用户抽奖次数
+
+-- module---
+common 共公文件
+components 小组件
+css 
+dafuweng2 118步之后活动
+images
+ladder 暂未使用
+module1 游戏模块
+plug 相关插件
+pop 所有弹窗
+scene 下雨下雪等场景
+widget 加载 弹窗 事件等

@@ -1,0 +1,12 @@
+使用的技术：
+vue vue-router vuex  es6   Promise 等
+postcss
+使用webpack2 打包
+
+
+integral 积分
+components 公共
+module 首页
+pop 弹窗
+rank 排名
+prize 奖品

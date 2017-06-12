@@ -1,0 +1,32 @@
+$brower : -webkit-;
+@define-mixin contain $src ,$size:contain , $repeat : no-repeat {
+    background-image:url($src);
+    background-size: $size;
+    background-repeat:$repeat;
+}
+@define-extend box-sizing{
+    box-sizing:border-box;
+    @each $key in ($brower) {
+        $(key)box-sizing:border-box;
+    }
+}
+
+$minDevice: -webkit-min-device-pixel-ratio;
+$maxDevice: -webkit-max-device-pixel-ratio;
+@define-mixin size $key , $val{
+    $(key) : $val;
+    @media only screen and (min-device-width : 320px) and (max-device-width : 340px) and (orientation : portrait) and ($minDevice:1) and ($maxDevice:2) {
+        $(key) : calc($val*.85714285714285714);
+    }
+    @media only screen and (min-device-width : 240px) and (max-device-width : 600px) and (orientation : portrait) and ($minDevice:0.75) and ($maxDevice:1.9){
+        $(key) : calc($val*.85714285714285714);
+    }
+    //iphone 6 plus
+    @media only screen and (min-device-width : 410px) and (max-device-width : 500px) and (orientation : portrait) and ($minDevice:2.5) and ($maxDevice:4.0){
+        $(key) : calc($val*1.105); 
+    }
+    
+}
+@define-mixin font-size $val {
+    @mixin size font-size,$val;
+}

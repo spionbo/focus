@@ -1,9 +1,28 @@
 {
+<<<<<<< .mine
+    "scripts": {
+        "build": "set NODE_ENV=build&& webpack --progress --hide-modules --config webpack.config.js",
+        "dev": "set NODE_ENV=dev&& webpack --progress --colors --hide-modules --config webpack.config.js",
+        "upload": "set NODE_ENV=dev&& webpack --progress --colors --config webpack.dll.config.js",
+        "gulpdev": "gulp dev --gulpfile gulpfile.babel.js",
+        "gulpbuild": "gulp build --gulpfile gulpfile.babel.js"
+    },
+    "eslintConfig": {
+        "browserslist": ["iOS 8", "> 1%", "last 5 versions"]
+    },
+    "browserslist": ["iOS 8", "> 1%", "last 5 versions"]
+}
+=======
   "scripts": {
     "build": "set NODE_ENV=build&& webpack --progress --hide-modules --config webpack.config.js",
     "dev": "set NODE_ENV=dev&& webpack --progress --colors --hide-modules --config webpack.config.js",
     "upload": "set NODE_ENV=dev&& webpack --progress --colors --config webpack.dll.config.js",
     "gulpdev": "gulp dev --gulpfile gulpfile.babel.js",
     "gulpbuild": "gulp build --gulpfile gulpfile.babel.js"
+  },
+  "devDependencies": {
+    "node-sass": "^4.5.2",
+    "webpack": "^2.3.3"
   }
 }
+>>>>>>> .theirs

@@ -1,0 +1,473 @@
+
+.modal-mask .modal-header .title-bg .bg1[data-v-903b0458]{
+    background-image:url(images/txt1.png?39fa1cef);
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.modal-mask .modal-body .c-pop[data-v-903b0458]{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+    -ms-flex-direction:column;
+    flex-direction:column;
+    padding:0 $s20;
+}
+.modal-mask .modal-body .c-pop h2[data-v-903b0458]{
+    color:#fff600;
+    text-align:center;
+}
+.modal-mask .modal-body .c-pop p[data-v-903b0458]{
+    text-align:center;
+}
+.modal-mask .modal-body .c-pop .cnt1[data-v-903b0458]{
+    position:relative;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-orient:horizontal;
+    -webkit-box-direction:normal;
+    -ms-flex-direction:row;
+    flex-direction:row;
+    -webkit-box-align:center;
+    -ms-flex-align:center;
+    align-items:center;
+    -webkit-box-pack:center;
+    -ms-flex-pack:center;
+    justify-content:center;
+}
+.modal-mask .modal-body .c-pop .scenedobg1[data-v-903b0458]{
+    position:absolute;
+    top:30px;
+    top:1.875rem;
+    background-image:url(images/l.png?cfe91dcf);
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    flex-direaction:column;
+    -webkit-box-pack:center;
+    -ms-flex-pack:center;
+    justify-content:center;
+    -webkit-box-align : center;
+    -ms-flex-align : center;
+    align-items : center;
+    mix-blend-mode: screen;
+}
+.modal-mask .modal-body .c-pop .scenedo[data-v-903b0458]{
+    background-image:url(images/004.png?653d18a0);
+    background-size:contain;
+    background-repeat:no-repeat;
+    position:relative;
+    z-index:999;
+}
+.modal-mask .modal-body .c-pop span[data-v-903b0458]{
+    display:block;
+    color:#fff600
+}
+.modal-mask .submit[data-v-903b0458]{
+    position:relative;
+    z-index:999;
+}
+.modal-mask .submit .btn1[data-v-903b0458]{
+    padding-top:5px;
+    padding-top:0.3125rem;
+    text-align:center;
+    color:#fff600;
+    text-decoration:underline;
+}
+
+.modal-header .title-bg i[data-v-3a05c150]{
+    background-image:url(images/txt2.png?3c51b519);
+    background-size:contain;
+    background-repeat:no-repeat
+}
+.modal-body .notStart[data-v-3a05c150]{
+    text-align:center;
+}
+.modal-body .notStart p[data-v-3a05c150]{
+    font-size:0.875rem;
+}
+.modal-body .notStart p //iphone 6 plus
+    @media only screen and (min-device-width : 410px) and (max-device-width : 500px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio:\2.5) and (-webkit-max-device-pixel-ratio:\4.0)[data-v-3a05c150]{
+    font-size:0.96688rem
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 340px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio:1) and (-webkit-max-device-pixel-ratio:2){
+.modal-body .notStart p[data-v-3a05c150]{
+        font-size:0.75rem
+}
+}
+@media only screen and (min-device-width : 240px) and (max-device-width : 600px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio:0.75) and (-webkit-max-device-pixel-ratio:1.9){
+.modal-body .notStart p[data-v-3a05c150]{
+        font-size:0.75rem
+}
+}
+
+.explain[data-v-07d9c35a]{
+    background-image:url(images/explain.png?8462d883);
+    background-size:contain;
+    background-repeat:no-repeat;
+    width:320px;
+    width:320px;
+    width:20rem; height:320px; height:320px; height:20rem;
+    position:relative; z-index:999;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+}
+.explain .close[data-v-07d9c35a]{
+    position:absolute;
+    top:0;
+    right:0;
+}
+.content[data-v-07d9c35a]{
+    margin:0 20px;
+    margin:0 1.25rem;
+    -webkit-box-flex:1;
+        -ms-flex:1;
+            flex:1;
+    overflow-y:scroll;
+}
+.content .img[data-v-07d9c35a]{
+    background-image:url(images/text1.png?da6c46ac);
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+
+.modal-header .title-bg[data-v-6c1bb27c]{
+}
+.modal-body .notStart[data-v-6c1bb27c]{
+    text-align:center;
+}
+.modal-body .notStart p[data-v-6c1bb27c]{
+    font-size:0.875rem;
+}
+.modal-body .notStart p //iphone 6 plus
+    @media only screen and (min-device-width : 410px) and (max-device-width : 500px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio:\2.5) and (-webkit-max-device-pixel-ratio:\4.0)[data-v-6c1bb27c]{
+    font-size:0.96688rem;
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 340px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio:1) and (-webkit-max-device-pixel-ratio:2){
+.modal-body .notStart p[data-v-6c1bb27c]{
+        font-size:0.75rem;
+}
+}
+@media only screen and (min-device-width : 240px) and (max-device-width : 600px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio:0.75) and (-webkit-max-device-pixel-ratio:1.9){
+.modal-body .notStart p[data-v-6c1bb27c]{
+        font-size:0.75rem;
+}
+}
+
+.modal-header .title-bg[data-v-53e53fa4]{
+}
+.modal-body .notStart[data-v-53e53fa4]{
+    text-align:center;
+}
+.modal-body .notStart p[data-v-53e53fa4]{
+    font-size:0.875rem;
+}
+.modal-body .notStart p //iphone 6 plus
+    @media only screen and (min-device-width : 410px) and (max-device-width : 500px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio:\2.5) and (-webkit-max-device-pixel-ratio:\4.0)[data-v-53e53fa4]{
+    font-size:0.96688rem;
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 340px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio:1) and (-webkit-max-device-pixel-ratio:2){
+.modal-body .notStart p[data-v-53e53fa4]{
+        font-size:0.75rem;
+}
+}
+@media only screen and (min-device-width : 240px) and (max-device-width : 600px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio:0.75) and (-webkit-max-device-pixel-ratio:1.9){
+.modal-body .notStart p[data-v-53e53fa4]{
+        font-size:0.75rem;
+}
+}
+
+.modal-mask .modal-body{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-pack:center;
+    -ms-flex-pack:center;
+    justify-content:center;
+    -webkit-box-align : center;
+    -ms-flex-align : center;
+    align-items : center;
+}
+.modal-mask .modal-body .scenedobg{
+    background-image:url(images/l.png?cfe91dcf);
+    background-size:contain;
+    background-repeat:no-repeat;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    flex-direaction:column;
+    -webkit-box-pack:center;
+    -ms-flex-pack:center;
+    justify-content:center;
+    -webkit-box-align : center;
+    -ms-flex-align : center;
+    align-items : center;
+}
+.modal-mask .modal-body .selectSceneNum{
+}
+.modal-mask .modal-body .scenedo{
+    position:relative;
+    background-image:url(images/dicedo.gif?73c54a4c);
+    background-size:contain;
+    background-repeat:no-repeat;
+    -webkit-transition-duration:.3s;
+    transition-duration:.3s
+}
+.modal-mask .modal-body .scenedo.img1{
+    background-image:url(images/001.png?a438e869);
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.modal-mask .modal-body .scenedo.img2{
+    background-image:url(images/002.png?682da972);
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.modal-mask .modal-body .scenedo.img3{
+    background-image:url(images/003.png?dd0e1a13);
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.modal-mask .modal-body .scenedo.img4{
+    background-image:url(images/004.png?653d18a0);
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.modal-mask .modal-body .scenedo.img5{
+    background-image:url(images/005.png?ebe8b480);
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.modal-mask .modal-body .scenedo.img6{
+    background-image:url(images/006.png?e45ae6d6);
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.modal-mask .modal-body .scenedo-num{
+    position:relative;
+    -webkit-transition-duration:.3s;
+    transition-duration:.3s;
+    opacity:0;
+    -webkit-transform:translateY(6.25rem);
+    transform:translateY(6.25rem)
+}
+.modal-mask .modal-body .scenedo-num.cur{
+    opacity:1;
+    -webkit-transform:translateY(0);
+    transform:translateY(0);
+}
+.modal-mask .modal-body .scenedo-num.img1{
+    background-image:url(images/1.png?3aa2e98d);
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.modal-mask .modal-body .scenedo-num.img2{
+    background-image:url(images/2.png?f018deaa);
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.modal-mask .modal-body .scenedo-num.img3{
+    background-image:url(images/3.png?02278ed6);
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.modal-mask .modal-body .scenedo-num.img4{
+    background-image:url(images/4.png?2dab866c);
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.modal-mask .modal-body .scenedo-num.img5{
+    background-image:url(images/5.png?f5d185cf);
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.modal-mask .modal-body .scenedo-num.img6{
+    background-image:url(images/6.png?7e8f94b9);
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.modal-mask .modal-body .scenedo-num.img7{
+    background-image:url(images/7.png?d44edb58);
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.modal-mask .modal-body .scenedo-num.img8{
+    background-image:url(images/8.png?64e7e6e1);
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.modal-mask .modal-body .scenedo-num.img9{
+    background-image:url(images/9.png?76c5bbd9);
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.modal-mask .modal-body .scenedo-num.img10{
+    background-image:url(images/10.png?d66f9625);
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.modal-mask .modal-body .scenedo-num.img11{
+    background-image:url(images/11.png?6d23d40a);
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.modal-mask .modal-body .scenedo-num.img12{
+    background-image:url(images/12.png?b456edc5);
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+@-webkit-keyframes lights{
+0%{
+        -webkit-transform:rotate(10deg);
+        transform:rotate(10deg);
+        opacity:.8;
+}
+25%{
+        -webkit-transform:rotate(0deg);
+        transform:rotate(0deg);
+        opacity:1;
+}
+50%{
+        -webkit-transform:rotate(-10deg);
+        transform:rotate(-10deg);
+        opacity:.5;
+}
+75%{
+        -webkit-transform:rotate(0deg);
+        transform:rotate(0deg);
+        opacity:.6;
+}
+100%{
+        -webkit-transform:rotate(10deg);
+        transform:rotate(10deg);
+        opacity:.8;
+}
+}
+@keyframes lights{
+0%{
+        -webkit-transform:rotate(10deg);
+        transform:rotate(10deg);
+        opacity:.8;
+}
+25%{
+        -webkit-transform:rotate(0deg);
+        transform:rotate(0deg);
+        opacity:1;
+}
+50%{
+        -webkit-transform:rotate(-10deg);
+        transform:rotate(-10deg);
+        opacity:.5;
+}
+75%{
+        -webkit-transform:rotate(0deg);
+        transform:rotate(0deg);
+        opacity:.6;
+}
+100%{
+        -webkit-transform:rotate(10deg);
+        transform:rotate(10deg);
+        opacity:.8;
+}
+}
+.modal-mask .lights{
+    position:fixed;
+    left:50%;
+    top:0;
+    opacity:.0;
+    z-index:5;
+    background-image:url(images/sunlight.png?b4d6e246);
+    background-size:contain;
+    background-repeat:no-repeat;
+    -webkit-transform-origin:center bottom;
+    transform-origin:center bottom;
+    -webkit-transform : rotate(2deg);
+    transform : rotate(2deg);
+    -webkit-animation : lights 10s infinite linear;
+    animation : lights 10s infinite linear;
+    -webkit-animation-delay: .5s;
+    animation-delay: .5s
+}
+.modal-mask.scenedo-pop{
+    background:rgba(0, 0, 0, .8);
+}
+.modal-mask.scenedo-pop .modal-container{
+    background:none;
+}
+
+.selectScene .select-scene[data-v-63096d53]{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-pack:center;
+    -ms-flex-pack:center;
+    justify-content:center;
+    -webkit-box-align:center;
+    -ms-flex-align:center;
+    align-items:center;
+}
+.selectScene .select-scene .right-slide[data-v-63096d53]{
+    margin-left:10px;
+    margin-left:0.625rem;
+}
+.selectScene .select-scene .btn[data-v-63096d53]{
+    background-image:url(images/selectone.png?d76faabb);
+    background-size:contain;
+    background-repeat:no-repeat
+}
+.selectScene .select-scene .btn.btn1[data-v-63096d53]{
+    background-image:url(images/selecttwo.png?21e32791);
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.selectScene p[data-v-63096d53], .selectScene p.tips[data-v-63096d53]{
+    font-size:0.75rem;
+    padding-top:5px;
+    padding-top:0.3125rem;
+    color:#fff600;
+    text-align:center;
+}
+.selectScene p //iphone 6 plus
+    @media only screen and (min-device-width : 410px) and (max-device-width : 500px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio:\2.5) and (-webkit-max-device-pixel-ratio:\4.0)[data-v-63096d53], .selectScene p.tips //iphone 6 plus
+    @media only screen and (min-device-width : 410px) and (max-device-width : 500px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio:\2.5) and (-webkit-max-device-pixel-ratio:\4.0)[data-v-63096d53]{
+    font-size:0.82875rem;
+}
+.selectScene p.tips[data-v-63096d53]{
+    text-align:left;
+    padding:0 25px 5px;
+    padding:0 1.5625rem 0.3125rem;
+    color:#fff;
+}
+@media only screen and (min-device-width : 320px) and (max-device-width : 340px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio:1) and (-webkit-max-device-pixel-ratio:2){
+.selectScene p[data-v-63096d53], .selectScene p.tips[data-v-63096d53]{
+        font-size:0.64286rem;
+}
+}
+@media only screen and (min-device-width : 240px) and (max-device-width : 600px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio:0.75) and (-webkit-max-device-pixel-ratio:1.9){
+.selectScene p[data-v-63096d53], .selectScene p.tips[data-v-63096d53]{
+        font-size:0.64286rem;
+}
+}
+
+.modal-mask .modal-header .title-bg .bg1[data-v-f39cbf1a]{
+    background-image:url(images/txt1.png?39fa1cef);
+    background-size:contain;
+    background-repeat:no-repeat;
+}
+.modal-mask .modal-body .winning-pop[data-v-f39cbf1a]{
+    padding:0 $s20;
+}
+.modal-mask .modal-body .winning-pop h2[data-v-f39cbf1a]{
+    color:#fff600;
+    text-align:center;
+}
+.modal-mask .modal-body .winning-pop p[data-v-f39cbf1a]{
+    text-align:center;
+}
+
+/*# sourceMappingURL=9comon.css.map?165a48c28e64253ab538*/

@@ -14,7 +14,11 @@
 				.m{ @include transition-duration; position:absolute; width:100%; text-align:center; color:#ea2414; font-size:$s14;}
 			}
 		}
-		.bg{ margin:0 auto; @include contain('../../images/main/h2_title.jpg'); text-align: center; }
+		.bg{ margin:0 auto; @include contain('../../images/main/h2_title.jpg'); text-align: center;
+			@include box-sizing;
+			&.tit2{ @include contain('../../images/main/h2_title2.jpg'); }
+			em{ color:#ef0000}
+		 }
 		.car{ margin:$s10 0;
 			@include contain('../../images/main/car.gif');
 		}
@@ -34,6 +38,10 @@
 				 	@include contain('../../images/main/login_btn.jpg');
 				 	&:hover{ @include contain('../../images/main/login_btn_hover.jpg'); };
 				}
+				&.nextGame-btn{
+					@include contain('../../images/main/btn8.jpg');
+				 	&:hover{ @include contain('../../images/main/btn9.jpg'); };
+				}
 			}
 		}
 	}
@@ -46,15 +54,22 @@
 		</p>
 		<div class="btn img-size" :class="{btn2:isLucky}" data-width='200' data-height='67' @click='receive'></div>
 	</div>
-	<div class="bg img-size" data-width='569' data-height='101' data-lineHeight='101'>
+	<div v-if='info.map.pointOnMap && info.map.pointOnMap>=info.mapLength' class="bg tit2 img-size" data-width='680' data-height='138' data-paddingTop='25' data-lineHeight='45'>
+		您已完成大富翁活动，您的名次为：<em>{{info.map.userRank}}</em></br>
+		获得奖品：<em>{{info.map.prizeOfRank}}</em>
+	</div>
+	<div v-else class="bg img-size" data-width='569' data-height='101' data-lineHeight='101'>
 		您的剩余掷骰机会：
 		<span v-if='islogin'><em>{{diceChance}}</em></span>
 		<span v-else>登录后查看</span>
 	</div>
 	<div class="submit">
 		<div v-if='islogin'>
-			<div v-if='diceChance>0' class="btn btn2 img-size" @click='luckDraw' data-width='559' data-height='98'></div>
-			<div v-else class="btn img-size" @click='investment' data-width='559' data-height='98'></div>
+			<div v-if='info.map.pointOnMap<info.mapLength'>
+				<div v-if='diceChance>0' class="btn btn2 img-size" @click='luckDraw' data-width='559' data-height='98'></div>
+				<div v-else class="btn img-size" @click='investment' data-width='559' data-height='98'></div>
+			</div>
+			<div v-else class="btn nextGame-btn img-size" @click='nextGame' data-width='559' data-height='98'></div>
 		</div>
 		<div v-else>
 			<div class="btn btn-login img-size" @click='login' data-width='559' data-height='98'></div>
@@ -77,14 +92,28 @@
 				islogin : false, 
 				diceChance : 0 , //掷骰机会
 				isLucky : false,
+				info : info
 			}
 		},
 		beforeCreate(){
 			var self = this;
 			T.getAppInfo();
+			/*if(T.localStorage.getItem('nextGame')=='true' && info.map.pointOnMap && info.map.pointOnMap>=info.mapLength){
+				router.replace({ path: '/end', query: {
+                    wap:T.wap,uid:T.uid,
+                    pointOnMap:info.pointOnMap,
+                }});
+			};*/
+		},
+		watch : {
+			info : function(){
+				setTimeout(T.setImgSize,100);
+			}
 		},
 		mounted(){
 			var self = this;
+			setTimeout(T.setImgSize,300)
+			setTimeout(T.setImgSize,800)
 			this.islogin = T.isLogin;
 			if(!this.islogin || !T.uid) return;
 			info.click(()=>{
@@ -172,7 +201,16 @@
 					pointOnMap:num,
 					diceChance : this.diceChance
 				}})*/
-			}
+			},
+			nextGame : function(){
+
+				//T.localStorage.setItem('nextGame','true',{ expires : 9999});
+						
+                router.replace({ path: '/end', query: {
+                    wap:T.wap,uid:T.uid,
+                    pointOnMap:info.pointOnMap,
+                }})
+            }
 		}
 	}
 </script>

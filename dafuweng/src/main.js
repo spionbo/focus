@@ -60,6 +60,15 @@ const router = new VueRouter({
                 })*/
                 require(['./module/module5/index'],resolve)
             }
+        },
+        {
+            path: '/end', 
+            component : function( resolve){
+                /*return require.ensure([],(require)=>{
+                    return require('./module/module5/index');
+                })*/
+                require(['./dafuweng2/index'],resolve)
+            }
         }
     ]
 });

@@ -1,0 +1,157 @@
+@import './global';
+.modal-mask {
+    position: fixed;
+    z-index: 998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    transition-duration:.5s;
+    perspective : 600px;
+
+    .modal-wrapper{
+        width: 100%;
+        height: 100%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        transition-duration:.5s;
+    }
+    .modal-container {
+        position: relative; z-index: 998;
+        transition-duration : .5s;
+        display:flex;
+        flex-direction: column;
+        color:#333;
+        /* @mixin contain '../images/pop.png'; */
+        h2{ @mixin font-size 18px; padding:10px 0; color:#fff600; font-weight:normal;}
+        h3{ @mixin font-size 16px; padding:10px 0; color:#fff600; font-weight:normal;}
+        p{ @mixin font-size 14px; @mixin size line-height,18px;}
+    }
+    .close{
+        position:absolute; right:0; top:0; width:30px; height:30px; 
+        @mixin contain '../images/close.png'; 
+        transition-duration:.5s;
+        z-index: 9999;
+        /* border-radius:100%;
+        border:2px solid #fff;
+        &:before, &:after{ 
+            position: absolute;
+            left:10%;
+            top:50%;
+            margin-top:-2%;
+            content:''; width:80%; height:2px;
+            display:block; background:#fff; border-radius:10px;
+            transform:rotate(-45deg);
+        }
+        
+        &:after{
+            transform:rotate(45deg);
+        } */
+        &:hover{-webkit-filter:brightness(1.2);}
+    }
+    .modal-header{
+        .title-bg{
+            margin:0 auto;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            /* @mixin contain '../images/tit-bg.png'; */
+            i{ display:block; }
+        }
+
+    }
+    .modal-body{
+        display:flex;
+        flex-direction:column;
+        flex:1;
+
+        background:none;
+        position: relative; z-index: 998;
+        overflow-y:visible;
+        overflow:visible;
+        .body-bg{ 
+            position:relative; 
+            z-index:997; 
+            background:#fff;
+            border-radius:5px;
+            padding:15px;
+            flex:1;
+            display:flex;
+            flex-direction:column;
+        }
+    }
+    .modal-footer{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        margin-top:10px;
+        .btn{
+            color:#873808; text-align:center;
+            background:#fd8325; border-radius:5px; color:#fff;
+            /* @mixin contain '../images/defualt-btn.png'; */
+        }
+    }
+
+
+    &.fadeIn-enter-active{
+        .modal-wrapper{
+            transform: translateY(-200px) scale(.1) perspective(600px) rotateX(70deg);
+            opacity:0;
+        }
+    }
+    &.fadeIn-enter-to,&.fadeIn-leave-active{
+        .modal-wrapper{
+            transform: translateY(0px) scale(1) perspective(600px) rotateX(0deg);
+            opacity:1;
+        }
+    }
+    &.fadeIn-leave-to .modal-wrapper{
+        transform: translateY(200px) scale(.1) perspective(600px) rotateX(-70deg);
+        opacity:0;
+    }
+
+    &.rotate3d-enter-active{
+        .modal-wrapper{
+            transform:rotateX(180deg) scale(.1);
+            opacity:0;
+        }
+    }
+    &.rotate3d-enter-to,&.rotate3d-leave-active{
+        .modal-wrapper{
+            transform:rotateX(0deg) scale(1);
+            opacity:1;
+        }
+    }
+    &.rotate3d-leave-to .modal-wrapper{
+        transform:rotateX(180deg) scale(.1);
+        opacity:0;
+    }
+
+    &.modal-enter {
+        opacity: 0;
+    }
+    &.modal-leave-active {
+        opacity: 0;
+    }
+    &.modal-enter,&.modal-leave-active{
+        .modal-container,.modal-container {
+            -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+        }
+    }
+
+    &.mask-endter,&.mask-leave-active,&.mask-enter-active{
+
+        transform : translateX(100%);
+    }
+    &.mask-enter-to,&.mask-leave-active{
+
+        transform : translateX(0%);
+    }
+    &.mask-leave-to{
+        transform : translateX(100%);
+
+    }
+}

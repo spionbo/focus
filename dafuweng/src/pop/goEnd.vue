@@ -7,8 +7,8 @@
             }
         }
         .modal-footer{
-            .btn.btn2{ 
-                 @include contain('../images/pop/btn.png');
+            .btn.end-btn{ 
+                 @include contain('../images/pop/btn7.png');
             }
         }
         .modal-body{
@@ -43,7 +43,7 @@
         <p>奖品将于活动结束后15个工作日内联系您并发放</p>
     </div>
     <div slot='footer' class='submit'>
-        <div class='btn btn2 img-size' style='margin:0 auto;' data-width='327' data-height='60' @click='close'></div>
+        <div class='btn end-btn img-size' style='margin:0 auto;' data-width='327' data-height='60' @click='nextGame'></div>
     </div>
 </pop>
 </template>
@@ -65,6 +65,13 @@
         methods : {
             close : function(){
                 this.$refs.pop.closePop();
+            },
+            nextGame : function(){
+                this.close();
+                router.replace({ path: '/end', query: {
+                    wap:T.wap,uid:T.uid,
+                    pointOnMap:info.pointOnMap,
+                }})
             }
         }
     }
